@@ -104,5 +104,9 @@ Every push to `main` runs lint, tests, a CVE gate and a container smoke test, th
   <img alt="My contribution graph, eaten by a snake" src="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/output/snake-dark.svg" />
 </picture>
 
+<p align="center">
+  <img alt="Contribution streak" src="https://streak-stats.demolab.com?user=zhenxi0901&theme=dark&hide_border=true&background=0D1117&ring=C2F75C&fire=C2F75C&currStreakLabel=C2F75C" />
+</p>
+
 
 <sub>This README keeps itself current: a daily GitHub Action pulls my merged pull requests and my portfolio's deploys, and another redraws the contribution snake.</sub>
