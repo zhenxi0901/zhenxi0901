@@ -24,9 +24,9 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 
 | | What it is | My part |
 |---|---|---|
-| **Building IoT platform**<br><sub>Primustech</sub> | Live data from building systems (sensors, HVAC, meters), with the dashboards and alarms facility teams use. Kubernetes on GKE. | Moved it from one VM to GKE microservices with Terraform. Own its Cloud Build CI/CD (63 merged PRs). Cut cloud spend ~15%. Grafana dashboards and alerts. |
-| **AI agent platform**<br><sub>Primustech</sub> | Two agents for facility teams: one answers from live building data, the other from company documents (RAG). Cloud Run and Vertex AI. | Deploy and run the agent and RAG services in dev, staging and production. Per-environment CI/CD, IAM, secrets and shared-VPC networking. Latency, token-cost and model benchmarks. |
-| **ARIES agent benchmarks**<br><sub>NTU HyScale Lab, final-year project</sub> | Long-horizon LLM agent workloads on the lab's open-source agent-serving framework. | The Toolathlon adapter for ARIES. 320 agent runs benchmarked on a hosted API and on self-hosted SGLang on an A100. |
+| **Building IoT platform**<br><sub>Primustech</sub> | Live data from building systems (sensors, HVAC, meters), with the dashboards and alarms facility teams use. Kubernetes on GKE. | Moved it from one VM to GKE microservices with Terraform. Own its Cloud Build CI/CD (63 merged PRs). Cut cloud spend ~15%. Grafana dashboards and alerts.<br><sub>Case studies: [GKE migration](https://portfolio-emsghin2iq-as.a.run.app/work/gke) · [delivery pipeline](https://portfolio-emsghin2iq-as.a.run.app/work/pipeline) · [cost cut](https://portfolio-emsghin2iq-as.a.run.app/work/reaper) · [alerting](https://portfolio-emsghin2iq-as.a.run.app/work/observability)</sub> |
+| **AI agent platform**<br><sub>Primustech</sub> | Two agents for facility teams: one answers from live building data, the other from company documents (RAG). Cloud Run and Vertex AI. | Deploy and run the agent and RAG services in dev, staging and production. Per-environment CI/CD, IAM, secrets and shared-VPC networking. Latency, token-cost and model benchmarks.<br><sub>[Case study](https://portfolio-emsghin2iq-as.a.run.app/work/ai-platform) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/#ai)</sub> |
+| **ARIES agent benchmarks**<br><sub>NTU HyScale Lab, final-year project</sub> | Long-horizon LLM agent workloads on the lab's open-source agent-serving framework. | The Toolathlon adapter for ARIES. 320 agent runs benchmarked on a hosted API and on self-hosted SGLang on an A100.<br><sub>[Findings](https://portfolio-emsghin2iq-as.a.run.app/#research) · [ARIES](https://github.com/hyscale-lab/ARIES)</sub> |
 
 ## See it running
 
@@ -41,7 +41,25 @@ My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production 
     <td><sub><b>Follow a request</b> through the AI agent platform, and see which parts are mine.</sub></td>
     <td><sub><b>SLOs and error budgets</b>, with multi-window burn-rate alerts and a replayable incident.</sub></td>
   </tr>
+  <tr>
+    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/work/reaper"><img alt="A case study page: the numbers, then a working model of the system" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/case-page.webp" /></a></td>
+    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/postmortems/contact-form"><img alt="A postmortem page: impact in numbers, then the write-up" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/postmortem.webp" /></a></td>
+  </tr>
+  <tr>
+    <td><sub><b>A page per case study</b>: the numbers, a working model to press, and the full write-up.</sub></td>
+    <td><sub><b>Postmortems</b> from running the site itself, sourced from commits and Cloud Run's logs.</sub></td>
+  </tr>
 </table>
+
+## Postmortems
+
+Blameless write-ups of what went wrong while I built and ran my portfolio: timeline, root cause, detection and action items linked to the commits that fixed them.
+
+| Postmortem | What happened | The lesson |
+|---|---|---|
+| [“Message sent” for messages nobody would read](https://portfolio-emsghin2iq-as.a.run.app/postmortems/contact-form)<br><sub>Near miss · 0 messages lost</sub> | For 3 h 36 min the contact form said "sent" while keeping messages on a disk Cloud Run throws away. | Only say "done" after the durable handoff. |
+| [The health check that only worked from inside](https://portfolio-emsghin2iq-as.a.run.app/postmortems/healthz)<br><sub>Near miss · caught before launch</sub> | Cloud Run's front end answers some paths ending in "z" itself, so `/healthz` was a 404 from outside while the app was healthy. | Test through the same front door your users use. |
+| [A failing check on a healthy site](https://portfolio-emsghin2iq-as.a.run.app/postmortems/smoke-test)<br><sub>False alarm</sub> | The smoke test reported `/metrics` as broken while every request in the logs returned 200. | A flaky check is a broken check. |
 
 ## Merged pull requests
 
