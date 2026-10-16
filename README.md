@@ -83,11 +83,11 @@ Every push to `main` runs lint, tests, a CVE gate and a container smoke test, th
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
-| [`cbf0f8e`](https://github.com/zhenxi0901/portfolio/commit/cbf0f8e72410705d6d4dd3024bcb7a76795e647b) README: screenshots and what the site covers now | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38709362112) | 2026-10-15 08:57 | 1m 26s |
-| [`6dfcc52`](https://github.com/zhenxi0901/portfolio/commit/6dfcc5258cd5fc5d25175ed18b7ee3d94fd49f04) Command palette finds sections by what is in them; name its button | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38707762661) | 2026-10-15 08:43 | 1m 28s |
-| [`3563c2f`](https://github.com/zhenxi0901/portfolio/commit/3563c2f16f0bbf28ba3c95d62996e3154d49a3c3) Résumé: give the AI agent platform its own section | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38704979186) | 2026-10-15 08:20 | 1m 27s |
-| [`4356f2a`](https://github.com/zhenxi0901/portfolio/commit/4356f2a2c5c0bd7a3746d33c1a56e7c3aeea07ec) Two products and the FYP; SLOs and error budgets; the AI infra up close | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38703173611) | 2026-10-15 08:05 | 1m 22s |
-| [`86a24f1`](https://github.com/zhenxi0901/portfolio/commit/86a24f136081e2430a092361137f4ce9760999bc) Résumé: describe the AI platform instead of naming the product | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38700633362) | 2026-10-15 07:43 | 1m 32s |
+| [`e3f87ee`](https://github.com/zhenxi0901/portfolio/commit/e3f87eeae032c1b982cf2ecff0eb314d27da0928) README: screenshots of a case study page and a postmortem | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38850493043) | 2026-10-16 04:24 | 1m 19s |
+| [`201e71e`](https://github.com/zhenxi0901/portfolio/commit/201e71ef886057e9c64dfe55efa49f62ed531505) Caption contrast on the tinted result and lesson boxes | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38849491071) | 2026-10-16 04:13 | 1m 16s |
+| [`9b3547a`](https://github.com/zhenxi0901/portfolio/commit/9b3547aff1a07eb457385339d5afd2926897b7ea) A page for each case study; deep links into the interactive tabs | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38845849909) | 2026-10-16 03:30 | 1m 25s |
+| [`79c1661`](https://github.com/zhenxi0901/portfolio/commit/79c1661d313ce450374aff5b2d77f1ecb305a581) Postmortems from running this site; contact form fails closed | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38845246477) | 2026-10-16 03:23 | 1m 32s |
+| [`cd2451b`](https://github.com/zhenxi0901/portfolio/commit/cd2451b75a551357be5b77608faece4ed543547f) Faster on phones, accessibility issues fixed | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38843818154) | 2026-10-16 03:06 | 1m 26s |
 <!-- deploys:end -->
 
 ## Numbers I can back up
