@@ -108,11 +108,11 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
-| [`a8cd886`](https://github.com/zhenxi0901/portfolio/commit/a8cd8863c06417ecaaec9a8790715822de777905) README: retake the hero screenshot | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39229778052) | 2026-10-19 09:24 | 0m 57s |
-| [`3a3d9c5`](https://github.com/zhenxi0901/portfolio/commit/3a3d9c5e4abd1fcca5ae7ee6b90846f0b36f40ae) Site fixes from a review: focus, live regions, timers and facts | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39227765203) | 2026-10-19 09:08 | 1m 05s |
-| [`c3bf624`](https://github.com/zhenxi0901/portfolio/commit/c3bf624d82ae471e263242ad12ba3b09cf9e9cc1) Answer trace: full-width bars on phones | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39220865794) | 2026-10-19 08:10 | 2m 21s |
-| [`0859de6`](https://github.com/zhenxi0901/portfolio/commit/0859de637d7fe81debd9b06730904a84373385e3) Real traces for the Ask console: OpenTelemetry to Cloud Trace | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39219622048) | 2026-10-19 07:59 | 2m 16s |
-| [`3b74859`](https://github.com/zhenxi0901/portfolio/commit/3b74859f26605a947d23664969e505a62ed71339) Light theme: product tags readable; Lighthouse audits both themes | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39216895392) | 2026-10-19 07:34 | 2m 15s |
+| [`833a9bf`](https://github.com/zhenxi0901/portfolio/commit/833a9bfd76785e4581c78cf98e3ba8d01c09fcee) Scheduled checks: say they can run late, and cover a day of delay | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39252255724) | 2026-10-19 12:27 | 1m 53s |
+| [`6c704e2`](https://github.com/zhenxi0901/portfolio/commit/6c704e2ef935821750a4f8bc47b74e5153309fdf) README: retake the delivery panel; refresh the delivery snapshots | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39250447901) | 2026-10-19 12:13 | 1m 44s |
+| [`97ac23e`](https://github.com/zhenxi0901/portfolio/commit/97ac23e236867a6809a70f43c6a06c093c65aa28) Fixes from a full review: releases, the changelog, the card and claims | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39249180137) | 2026-10-19 12:04 | 1m 46s |
+| [`97ac23e`](https://github.com/zhenxi0901/portfolio/commit/97ac23e236867a6809a70f43c6a06c093c65aa28) Fixes from a full review: releases, the changelog, the card and claims | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39248925939) | 2026-10-19 12:01 | 1m 42s |
+| [`464e8da`](https://github.com/zhenxi0901/portfolio/commit/464e8da166e629b52bebd3048180347f49f902fd) Changelog: attribute commits by ancestry, and wrap long titles | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39244188283) | 2026-10-19 11:22 | 1m 28s |
 <!-- deploys:end -->
 
 ## Numbers I can back up
