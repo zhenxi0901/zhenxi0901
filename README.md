@@ -82,11 +82,11 @@ Every push to `main` runs lint, tests, a CVE gate and a container smoke test, th
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
+| [`f39546e`](https://github.com/zhenxi0901/portfolio/commit/f39546e91003accffe20f50b7d62adf359031ee0) Take the résumé off the site and out of the repo | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39207362206) | 2026-10-19 05:59 | 1m 20s |
 | [`e3f87ee`](https://github.com/zhenxi0901/portfolio/commit/e3f87eeae032c1b982cf2ecff0eb314d27da0928) README: screenshots of a case study page and a postmortem | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38850493043) | 2026-10-16 04:24 | 1m 19s |
 | [`201e71e`](https://github.com/zhenxi0901/portfolio/commit/201e71ef886057e9c64dfe55efa49f62ed531505) Caption contrast on the tinted result and lesson boxes | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38849491071) | 2026-10-16 04:13 | 1m 16s |
 | [`9b3547a`](https://github.com/zhenxi0901/portfolio/commit/9b3547aff1a07eb457385339d5afd2926897b7ea) A page for each case study; deep links into the interactive tabs | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38845849909) | 2026-10-16 03:30 | 1m 25s |
 | [`79c1661`](https://github.com/zhenxi0901/portfolio/commit/79c1661d313ce450374aff5b2d77f1ecb305a581) Postmortems from running this site; contact form fails closed | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38845246477) | 2026-10-16 03:23 | 1m 32s |
-| [`cd2451b`](https://github.com/zhenxi0901/portfolio/commit/cd2451b75a551357be5b77608faece4ed543547f) Faster on phones, accessibility issues fixed | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/38843818154) | 2026-10-16 03:06 | 1m 26s |
 <!-- deploys:end -->
 
 ## Numbers I can back up
