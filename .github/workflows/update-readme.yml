@@ -1,10 +1,10 @@
 name: update readme
 
-# Refresh the merged pull requests and the portfolio's deploys once a day, and whenever the
+# Refresh the merged pull requests and the portfolio's deploys every four hours, and whenever the
 # script changes. Pushes made with GITHUB_TOKEN do not start new runs, so this cannot loop.
 on:
   schedule:
-    - cron: "17 1 * * *"
+    - cron: "17 */4 * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
       - run: python3 scripts/update_readme.py
         env:
           GH_TOKEN: ${{ github.token }}

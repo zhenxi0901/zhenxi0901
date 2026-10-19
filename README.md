@@ -30,7 +30,7 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 
 ## See it running
 
-My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production service in its own right: a Go API on Cloud Run with its own 99.9% SLO, measured from outside by uptime checks and shown live on the page, keyless deploys by image digest, and a smoke test against the live URL after every release. Some of what is on it:
+My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production service in its own right: a Go API on Cloud Run with its own 99.9% SLO, measured from outside by uptime checks and shown live on the page; DORA metrics computed from its own deploy history; OpenTelemetry traces in Cloud Trace, with each Ask answer showing its own; and a pipeline that builds the image once, tests it, and deploys that exact digest keylessly. [Take the 60-second tour](https://portfolio-emsghin2iq-as.a.run.app/?tour), or some of what is on it:
 
 <table>
   <tr>
@@ -48,6 +48,14 @@ My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production 
   <tr>
     <td><sub><b>A page per case study</b>: the numbers, a working model to press, and the full write-up.</sub></td>
     <td><sub><b>Postmortems</b> from running the site itself, sourced from commits and Cloud Run's logs.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/oncall"><img alt="The on-call drill: paged, investigating, the error budget burning" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/oncall-drill.webp" /></a></td>
+    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/#status"><img alt="DORA metrics for the portfolio, from its own deploy history" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/delivery.webp" /></a></td>
+  </tr>
+  <tr>
+    <td><sub><b>Go on call</b>: a simulated page where every look costs minutes, and a postmortem of your own response.</sub></td>
+    <td><sub><b>How the site ships</b>: deploys, lead time, change failure rate and time to restore, measured by its pipeline.</sub></td>
   </tr>
 </table>
 
@@ -83,7 +91,7 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 
 ## My portfolio's latest deploys
 
-Every push to `main` runs lint, tests, a CVE gate and a container smoke test, then ships the exact image digest to Cloud Run and smoke-tests the live site.
+Every push to `main` runs lint, tests, a container smoke test, Lighthouse budgets and a CVE gate on one image; the deploy then promotes that exact digest to Cloud Run and smoke-tests the live site. Refreshed every four hours.
 
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
@@ -132,4 +140,4 @@ Every push to `main` runs lint, tests, a CVE gate and a container smoke test, th
 </p>
 
 
-<sub>This README keeps itself current: a daily GitHub Action pulls my merged pull requests and my portfolio's deploys, and another redraws the contribution snake.</sub>
+<sub>This README keeps itself current: a GitHub Action pulls my merged pull requests and my portfolio's deploys every four hours, and another redraws the contribution snake daily.</sub>
