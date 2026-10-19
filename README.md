@@ -29,7 +29,7 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 
 ## See it running
 
-My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production service in its own right: a Go API on Cloud Run with SLO burn-rate alerts, keyless deploys by image digest, and a smoke test against the live URL after every release. Some of what is on it:
+My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production service in its own right: a Go API on Cloud Run with its own 99.9% SLO, measured from outside by uptime checks and shown live on the page, keyless deploys by image digest, and a smoke test against the live URL after every release. Some of what is on it:
 
 <table>
   <tr>
@@ -59,6 +59,11 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 | [“Message sent” for messages nobody would read](https://portfolio-emsghin2iq-as.a.run.app/postmortems/contact-form)<br><sub>Near miss · 0 messages lost</sub> | For 3 h 36 min the contact form said "sent" while keeping messages on a disk Cloud Run throws away. | Only say "done" after the durable handoff. |
 | [The health check that only worked from inside](https://portfolio-emsghin2iq-as.a.run.app/postmortems/healthz)<br><sub>Near miss · caught before launch</sub> | Cloud Run's front end answers some paths ending in "z" itself, so `/healthz` was a 404 from outside while the app was healthy. | Test through the same front door your users use. |
 | [A failing check on a healthy site](https://portfolio-emsghin2iq-as.a.run.app/postmortems/smoke-test)<br><sub>False alarm</sub> | The smoke test reported `/metrics` as broken while every request in the logs returned 200. | A flaky check is a broken check. |
+
+## Writing
+
+- [What 320 agent runs taught me about serving LLM agents](https://portfolio-emsghin2iq-as.a.run.app/writing/serving-llm-agents): tool calls were 2.7% of agent time, 96% of input tokens came from the prefix cache, and the GPU sat idle most of the time it was held.
+- [Finding a metrics bill in 914 orphaned Kafka topics](https://portfolio-emsghin2iq-as.a.run.app/writing/metrics-bill-kafka-topics): attribution first, a reaper that has to be a CronJob because the topics grow back, and dropping metrics only after checking who reads them.
 
 ## Merged pull requests
 
