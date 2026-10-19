@@ -30,7 +30,19 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 
 ## See it running
 
-My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production service in its own right: a Go API on Cloud Run with its own 99.9% SLO, measured from outside by uptime checks and shown live on the page; DORA metrics computed from its own deploy history; OpenTelemetry traces in Cloud Trace, with each Ask answer showing its own; and a pipeline that builds the image once, tests it, and deploys that exact digest keylessly. [Take the 60-second tour](https://portfolio-emsghin2iq-as.a.run.app/?tour), or some of what is on it:
+My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production service in its own right: a Go API on Cloud Run with its own 99.9% SLO, measured from outside by uptime checks and shown live on the page; DORA metrics computed from its own deploy history; OpenTelemetry traces in Cloud Trace, with each Ask answer showing its own; and a pipeline that builds the image once, tests and signs it, checks it before it takes traffic and rolls it back on its own if the live checks fail. The card below is drawn live by the portfolio's own Go server:
+
+<a href="https://portfolio-emsghin2iq-as.a.run.app/status">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://portfolio-emsghin2iq-as.a.run.app/api/card.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://portfolio-emsghin2iq-as.a.run.app/api/card.svg?theme=light" />
+    <img width="100%" alt="Live from my portfolio's Go server: the running commit, 30-day uptime, error budget left, release policy, DORA metrics and the last rollback drill" src="https://portfolio-emsghin2iq-as.a.run.app/api/card.svg" />
+  </picture>
+</a>
+
+[Status](https://portfolio-emsghin2iq-as.a.run.app/status) · [Changelog](https://portfolio-emsghin2iq-as.a.run.app/changelog) · [Why it's built this way](https://portfolio-emsghin2iq-as.a.run.app/decisions) · [Take the 60-second tour](https://portfolio-emsghin2iq-as.a.run.app/?tour)
+
+Some of what is on it:
 
 <table>
   <tr>
@@ -91,7 +103,7 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 
 ## My portfolio's latest deploys
 
-Every push to `main` runs lint, tests, a container smoke test, Lighthouse budgets and a CVE gate on one image; the deploy then promotes that exact digest to Cloud Run and smoke-tests the live site. Refreshed every four hours.
+Every push to `main` runs lint, tests, a container smoke test, Lighthouse budgets and a CVE gate on one image, which CI then signs with an SBOM and build provenance. The deploy verifies those, holds the release if the error budget is spent, smoke-tests the new revision before it takes traffic and rolls back on its own if the live checks fail. Each release is a [GitHub release](https://github.com/zhenxi0901/portfolio/releases); the full history is in the [changelog](https://portfolio-emsghin2iq-as.a.run.app/changelog). Refreshed every four hours.
 
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
