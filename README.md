@@ -14,6 +14,7 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 <a href="mailto:zli057@e.ntu.edu.sg"><img alt="Email" src="https://img.shields.io/badge/Email-0d1117?style=for-the-badge&logo=gmail&logoColor=c2f75c" /></a>
 
 <a href="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml"><img alt="Commit live on my portfolio right now" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fportfolio-emsghin2iq-as.a.run.app%2Fapi%2Fstatus&query=%24.commit&label=live%20commit&style=flat-square&labelColor=0d1117&color=c2f75c&logo=googlecloud&logoColor=c2f75c" /></a>
+<a href="https://portfolio-emsghin2iq-as.a.run.app/#status"><img alt="Portfolio uptime over 30 days, from Google Cloud uptime checks" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fportfolio-emsghin2iq-as.a.run.app%2Fapi%2Fbadge%2Fuptime&style=flat-square&labelColor=0d1117&logo=googlecloud&logoColor=c2f75c" /></a>
 <a href="https://github.com/zhenxi0901/portfolio/actions/workflows/ci.yml"><img alt="Portfolio CI" src="https://github.com/zhenxi0901/portfolio/actions/workflows/ci.yml/badge.svg" /></a>
 <a href="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml"><img alt="Portfolio deploy" src="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml/badge.svg" /></a>
 
@@ -52,7 +53,7 @@ My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production 
 
 ## Postmortems
 
-Blameless write-ups of what went wrong while I built and ran my portfolio: timeline, root cause, detection and action items linked to the commits that fixed them.
+Blameless write-ups of what went wrong while I built and ran my portfolio: timeline, root cause, detection and action items linked to the commits that fixed them. Or take the other seat: [go on call](https://portfolio-emsghin2iq-as.a.run.app/oncall) for a simulated incident and get a postmortem of your own response.
 
 | Postmortem | What happened | The lesson |
 |---|---|---|
