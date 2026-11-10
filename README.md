@@ -89,10 +89,10 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 ## Merged pull requests
 
 <!-- merged-prs:start -->
-- **[hyscale-lab/ARIES](https://github.com/hyscale-lab/ARIES)**: 3 merged
+- **[hyscale-lab/ARIES](https://github.com/hyscale-lab/ARIES)**: 4 merged
+  - [#92](https://github.com/hyscale-lab/ARIES/pull/92) Add an Apptainer deployment backend <sub>merged 2026-11-10</sub>
   - [#55](https://github.com/hyscale-lab/ARIES/pull/55) feat(benchmark): add the Toolathlon adapter <sub>merged 2026-10-12</sub>
   - [#61](https://github.com/hyscale-lab/ARIES/pull/61) fix: wait for a Docker exec that has not started yet <sub>merged 2026-10-01</sub>
-  - [#63](https://github.com/hyscale-lab/ARIES/pull/63) fix(hermes): run terminal commands in the sandbox workdir <sub>merged 2026-09-30</sub>
 - **[whupdido/mdp](https://github.com/whupdido/mdp)**: 21 merged
   - [#44](https://github.com/whupdido/mdp/pull/44) Task 2: keep board telemetry out of Status; say when the board will look again <sub>merged 2026-10-13</sub>
   - [#43](https://github.com/whupdido/mdp/pull/43) Use the firmware's 07-Oct turn radii in the Android README and animation <sub>merged 2026-10-11</sub>
