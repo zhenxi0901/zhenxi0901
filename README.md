@@ -115,6 +115,7 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 ## In review right now
 
 <!-- open-prs:start -->
+- **[hyscale-lab/ARIES#104](https://github.com/hyscale-lab/ARIES/pull/104)** feat: add aries cleanup for what a crashed run left <sub>opened 2026-11-11</sub>
 - **[hyscale-lab/ARIES#96](https://github.com/hyscale-lab/ARIES/pull/96)** feat: portable plugins (skills and MCP servers) for OpenClaw and Hermes <sub>opened 2026-11-02</sub>
 <!-- open-prs:end -->
 
@@ -140,11 +141,11 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
+| [`97e64b4`](https://github.com/zhenxi0901/portfolio/commit/97e64b485349e6855bfddceb9560ca1020074d6b) Remove a stray empty file committed by mistake | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42965926261) | 2026-11-11 05:27 | 1m 45s |
+| [`0d942c7`](https://github.com/zhenxi0901/portfolio/commit/0d942c72ca34002341647a1ff943335edc6a5644) Work grouped by product; the palette puts the best match first | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42961464005) | 2026-11-11 04:47 | 1m 46s |
+| [`df33106`](https://github.com/zhenxi0901/portfolio/commit/df33106345cfc6e180e09f2f674d2b4e89adf98a) A terminal in the page: a shell over the site's real API | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42958802228) | 2026-11-11 04:22 | 1m 38s |
 | [`897e882`](https://github.com/zhenxi0901/portfolio/commit/897e88257e8e20ba1a01d5714b0f120ac98437b9) README: screenshots of the agents and evidence pages | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42955661803) | 2026-11-11 03:53 | 1m 45s |
 | [`2a09c1a`](https://github.com/zhenxi0901/portfolio/commit/2a09c1a92c1861e35e4a06869081febb97967845) /agents: how to point an agent at the site, with a console that calls it | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42954551617) | 2026-11-11 03:42 | 1m 41s |
-| [`363e0f2`](https://github.com/zhenxi0901/portfolio/commit/363e0f20afa58742c3f57a0c490ba11eefdaf463) The site as an MCP server, llms.txt, Markdown copies and a card for curl | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42953028785) | 2026-11-11 03:28 | 1m 49s |
-| [`10d2b68`](https://github.com/zhenxi0901/portfolio/commit/10d2b688c22acdae18012391b961f7e87cff49a7) Three weeks of new work: control safety, two-step changes, Apptainer, MCP costs | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42951645082) | 2026-11-11 03:16 | 1m 39s |
-| [`833a9bf`](https://github.com/zhenxi0901/portfolio/commit/833a9bfd76785e4581c78cf98e3ba8d01c09fcee) Scheduled checks: say they can run late, and cover a day of delay | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39252255724) | 2026-10-19 12:27 | 1m 53s |
 <!-- deploys:end -->
 
 ## Numbers I can back up
