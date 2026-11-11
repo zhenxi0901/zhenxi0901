@@ -51,7 +51,7 @@ The portfolio is also a [Model Context Protocol](https://modelcontextprotocol.io
 claude mcp add --transport http zhenxi https://portfolio-emsghin2iq-as.a.run.app/mcp
 ```
 
-Then ask your agent what I worked on, or whether the site is inside its error budget. No agent to hand? It answers a terminal in text:
+Then ask your agent what I worked on, or whether the site is inside its error budget. No agent to hand? The site has [a terminal of its own](https://portfolio-emsghin2iq-as.a.run.app/?terminal), a shell in the page over the same live API, and it answers a real one in text:
 
 ```sh
 curl https://portfolio-emsghin2iq-as.a.run.app
