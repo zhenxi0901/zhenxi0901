@@ -24,10 +24,10 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 
 | | What it is | My part |
 |---|---|---|
-| **Building IoT platform**<br><sub>Primustech</sub> | Live data from building systems (sensors, HVAC, meters), with the dashboards and alarms facility teams use. Kubernetes on GKE. | Moved it from one VM to GKE microservices with Terraform. Own its Cloud Build CI/CD: 169 merged PRs on the platform so far. Cut cloud spend ~15%. Grafana dashboards and alerts. Wrote the safety pattern its remote-control lanes follow, held by 431 tests, and roll out security and reliability changes in steps that can each be undone.<br><sub>Case studies: [GKE migration](https://portfolio-emsghin2iq-as.a.run.app/work/gke) · [delivery pipeline](https://portfolio-emsghin2iq-as.a.run.app/work/pipeline) · [cost cut](https://portfolio-emsghin2iq-as.a.run.app/work/reaper) · [alerting](https://portfolio-emsghin2iq-as.a.run.app/work/observability) · [remote control that fails safe](https://portfolio-emsghin2iq-as.a.run.app/work/control) · [changes in reversible steps](https://portfolio-emsghin2iq-as.a.run.app/work/two-step)</sub> |
+| **Building IoT platform**<br><sub>Primustech</sub> | Live data from building systems (sensors, HVAC, meters), with the dashboards and alarms facility teams use. Kubernetes on GKE. | Moved it from one VM to GKE microservices with Terraform. Own its Cloud Build CI/CD: 169 of my PRs merged on the platform so far. Cut cloud spend ~15%. Grafana dashboards and alerts. Wrote the safety pattern its remote-control lanes are measured against (the control bridge has 431 tests), and roll out security and reliability changes in steps that can each be undone.<br><sub>Case studies: [GKE migration](https://portfolio-emsghin2iq-as.a.run.app/work/gke) · [delivery pipeline](https://portfolio-emsghin2iq-as.a.run.app/work/pipeline) · [cost cut](https://portfolio-emsghin2iq-as.a.run.app/work/reaper) · [alerting](https://portfolio-emsghin2iq-as.a.run.app/work/observability) · [remote control that fails safe](https://portfolio-emsghin2iq-as.a.run.app/work/control) · [changes in reversible steps](https://portfolio-emsghin2iq-as.a.run.app/work/two-step)</sub> |
 | **AI agent platform**<br><sub>Primustech</sub> | Two agents for facility teams: one answers from live building data, the other from company documents (RAG). Cloud Run and Vertex AI. | Deploy and run the agent and RAG services in dev, staging and production. Per-environment CI/CD, IAM, secrets and shared-VPC networking. Latency, token-cost and model benchmarks.<br><sub>[Case study](https://portfolio-emsghin2iq-as.a.run.app/work/ai-platform) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/#ai)</sub> |
 | **ARIES agent benchmarks**<br><sub>NTU HyScale Lab, final-year project</sub> | Long-horizon LLM agent workloads on the lab's open-source agent-serving framework. | The Toolathlon adapter for ARIES, and an Apptainer backend so the whole stack runs on a supercomputer without Docker or root (6,678 lines, merged Nov 2026). 320 agent runs benchmarked on a hosted API and on self-hosted SGLang on an A100, then 48 more instrumented to see what each MCP tool server costs per call.<br><sub>[Findings](https://portfolio-emsghin2iq-as.a.run.app/#research) · [running it without root](https://portfolio-emsghin2iq-as.a.run.app/writing/agents-without-root) · [ARIES](https://github.com/hyscale-lab/ARIES)</sub> |
-| **Robot car**<br><sub>NTU Multidisciplinary Design Project, Aug to Oct 2026</sub> | An autonomous car: an STM32 drives it, a Raspberry Pi plans the route and a camera recognises the targets. | The Android tablet controller, in Kotlin: 21 merged PRs. Made the tablet and the Pi agree on the map, and removed a planning state the app could never leave.<br><sub>[Repository](https://github.com/whupdido/mdp)</sub> |
+| **Robot car**<br><sub>NTU Multidisciplinary Design Project, Aug to Oct 2026</sub> | An autonomous car: an STM32 drives it, a Raspberry Pi links it to the tablet, and a laptop plans the route and recognises targets in the Pi's camera feed. | The Android tablet controller, in Kotlin: 21 merged PRs. Made the tablet and the Pi agree on the map, and removed a planning state the app could never leave.<br><sub>[Repository](https://github.com/whupdido/mdp)</sub> |
 
 ## See it running
 
@@ -109,7 +109,7 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 ## Writing
 
 - [Running an agent benchmark on a supercomputer, without root](https://portfolio-emsghin2iq-as.a.run.app/writing/agents-without-root): a supercomputer gives users neither Docker nor root, so I added an Apptainer backend to ARIES, a way to measure containers that have no cgroup, and found one hang that looked like the agent's fault.
-- [What 320 agent runs taught me about serving LLM agents](https://portfolio-emsghin2iq-as.a.run.app/writing/serving-llm-agents): tool calls were 2.7% of agent time, 96% of input tokens came from the prefix cache, and the GPU sat idle most of the time it was held.
+- [What 320 agent runs taught me about serving LLM agents](https://portfolio-emsghin2iq-as.a.run.app/writing/serving-llm-agents): MCP tool calls were 2.7% of agent time, 96% of input tokens came from the prefix cache, and the GPU sat idle most of the time it was held.
 - [Finding a metrics bill in 914 orphaned Kafka topics](https://portfolio-emsghin2iq-as.a.run.app/writing/metrics-bill-kafka-topics): attribution first, a reaper that has to be a CronJob because the topics grow back, and dropping metrics only after checking who reads them.
 
 ## In review right now
@@ -151,10 +151,10 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 ## Numbers I can back up
 
 - **~15%** lower cloud spend: 914 orphaned Kafka topics reaped, monitoring samples cut 40%, Cloud SQL and pods right-sized.
-- **320** LLM agent runs benchmarked: tool calls are 2.7% of agent time, and 96% of input tokens come from the prefix cache.
+- **320** LLM agent runs benchmarked: MCP tool calls are 2.7% of agent time, and 96% of input tokens come from the prefix cache.
 - **~7x** more A100 time held by serving jobs than the agents used.
 - **3.02x** throughput from four isolated agent tasks at once on one VM.
-- **431** tests hold three remote-control lanes to one written safety pattern: ten principles, each traced to the finding behind it.
+- **10** principles for remote control of building equipment, each traced to the finding behind it, and **431** tests on the bridge that applies them.
 - **6,678** lines across 46 files: the Apptainer backend that runs ARIES on a supercomputer without root, merged upstream.
 
 ## Stack
