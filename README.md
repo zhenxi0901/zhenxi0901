@@ -141,11 +141,11 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
-| [`97e64b4`](https://github.com/zhenxi0901/portfolio/commit/97e64b485349e6855bfddceb9560ca1020074d6b) Remove a stray empty file committed by mistake | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42965926261) | 2026-11-11 05:27 | 1m 45s |
-| [`0d942c7`](https://github.com/zhenxi0901/portfolio/commit/0d942c72ca34002341647a1ff943335edc6a5644) Work grouped by product; the palette puts the best match first | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42961464005) | 2026-11-11 04:47 | 1m 46s |
-| [`df33106`](https://github.com/zhenxi0901/portfolio/commit/df33106345cfc6e180e09f2f674d2b4e89adf98a) A terminal in the page: a shell over the site's real API | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42958802228) | 2026-11-11 04:22 | 1m 38s |
-| [`897e882`](https://github.com/zhenxi0901/portfolio/commit/897e88257e8e20ba1a01d5714b0f120ac98437b9) README: screenshots of the agents and evidence pages | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42955661803) | 2026-11-11 03:53 | 1m 45s |
-| [`2a09c1a`](https://github.com/zhenxi0901/portfolio/commit/2a09c1a92c1861e35e4a06869081febb97967845) /agents: how to point an agent at the site, with a console that calls it | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42954551617) | 2026-11-11 03:42 | 1m 41s |
+| [`7ed7870`](https://github.com/zhenxi0901/portfolio/commit/7ed7870a306c6996fe04c6b8a58573b3b8e4b238) The on-call drills in the terminal: oncall iot, oncall ai | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42987919138) | 2026-11-11 08:33 | 1m 47s |
+| [`c358892`](https://github.com/zhenxi0901/portfolio/commit/c3588923d22fdae6f45bace57dd397e02abe20b7) Hero: no THREE.Clock deprecation warning in the console | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42983687200) | 2026-11-11 08:00 | 1m 45s |
+| [`d6623c6`](https://github.com/zhenxi0901/portfolio/commit/d6623c6614d8608d6ac9389d1172804db955577b) Fixes from the bug re-check, and accessibility in every state | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42981392391) | 2026-11-11 07:41 | 1m 49s |
+| [`e97c690`](https://github.com/zhenxi0901/portfolio/commit/e97c6901b83eddf8ac2248f824cf5c6bbc004e59) A second on-call drill, on the AI agent platform; arrow keys on every tab strip | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42977289885) | 2026-11-11 07:08 | 1m 40s |
+| [`d48410f`](https://github.com/zhenxi0901/portfolio/commit/d48410ff11260db3bfe109fc41d22e77550c46ae) Fixes from three reviews: MCP, the text card, the terminal and the pages | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42971864077) | 2026-11-11 06:21 | 1m 45s |
 <!-- deploys:end -->
 
 ## Numbers I can back up
