@@ -83,7 +83,7 @@ Some of what is on it:
     <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/#status"><img alt="DORA metrics for the portfolio, from its own deploy history" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/delivery.webp" /></a></td>
   </tr>
   <tr>
-    <td><sub><b>Go on call</b>: a simulated page on the IoT or the AI platform, where every look costs minutes, and a postmortem of your own response.</sub></td>
+    <td><sub><b>Go on call</b>: a simulated page on the IoT or the AI platform, where every look costs minutes, and a postmortem of your own response. Prefer text? Open <a href="https://portfolio-emsghin2iq-as.a.run.app/?terminal">the site's terminal</a> and type <code>oncall</code>.</sub></td>
     <td><sub><b>How the site ships</b>: deploys, lead time, change failure rate and time to restore, measured by its pipeline.</sub></td>
   </tr>
   <tr>
@@ -98,7 +98,7 @@ Some of what is on it:
 
 ## Postmortems
 
-Blameless write-ups of what went wrong while I built and ran my portfolio: timeline, root cause, detection and action items linked to the commits that fixed them. Or take the other seat: [go on call](https://portfolio-emsghin2iq-as.a.run.app/oncall) for a simulated incident on either platform and get a postmortem of your own response.
+Blameless write-ups of what went wrong while I built and ran my portfolio: timeline, root cause, detection and action items linked to the commits that fixed them. Or take the other seat: [go on call](https://portfolio-emsghin2iq-as.a.run.app/oncall) for a simulated incident on either platform, or type `oncall` in [the site's terminal](https://portfolio-emsghin2iq-as.a.run.app/?terminal) to work it as text, and get a postmortem of your own response.
 
 | Postmortem | What happened | The lesson |
 |---|---|---|
