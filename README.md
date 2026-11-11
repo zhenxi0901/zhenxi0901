@@ -140,11 +140,11 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
+| [`897e882`](https://github.com/zhenxi0901/portfolio/commit/897e88257e8e20ba1a01d5714b0f120ac98437b9) README: screenshots of the agents and evidence pages | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42955661803) | 2026-11-11 03:53 | 1m 45s |
+| [`2a09c1a`](https://github.com/zhenxi0901/portfolio/commit/2a09c1a92c1861e35e4a06869081febb97967845) /agents: how to point an agent at the site, with a console that calls it | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42954551617) | 2026-11-11 03:42 | 1m 41s |
 | [`363e0f2`](https://github.com/zhenxi0901/portfolio/commit/363e0f20afa58742c3f57a0c490ba11eefdaf463) The site as an MCP server, llms.txt, Markdown copies and a card for curl | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42953028785) | 2026-11-11 03:28 | 1m 49s |
 | [`10d2b68`](https://github.com/zhenxi0901/portfolio/commit/10d2b688c22acdae18012391b961f7e87cff49a7) Three weeks of new work: control safety, two-step changes, Apptainer, MCP costs | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42951645082) | 2026-11-11 03:16 | 1m 39s |
 | [`833a9bf`](https://github.com/zhenxi0901/portfolio/commit/833a9bfd76785e4581c78cf98e3ba8d01c09fcee) Scheduled checks: say they can run late, and cover a day of delay | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39252255724) | 2026-10-19 12:27 | 1m 53s |
-| [`6c704e2`](https://github.com/zhenxi0901/portfolio/commit/6c704e2ef935821750a4f8bc47b74e5153309fdf) README: retake the delivery panel; refresh the delivery snapshots | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39250447901) | 2026-10-19 12:13 | 1m 44s |
-| [`97ac23e`](https://github.com/zhenxi0901/portfolio/commit/97ac23e236867a6809a70f43c6a06c093c65aa28) Fixes from a full review: releases, the changelog, the card and claims | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/39249180137) | 2026-10-19 12:04 | 1m 46s |
 <!-- deploys:end -->
 
 ## Numbers I can back up
