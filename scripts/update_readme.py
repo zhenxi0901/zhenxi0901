@@ -64,6 +64,18 @@ def merged_prs(per_repo: int = 3) -> str:
     return "\n".join(out) or "_Nothing merged yet._"
 
 
+def open_prs(limit: int = 6) -> str:
+    """My open pull requests to other people's public repositories, newest first."""
+    query = f"author:{USER} is:pr is:open is:public -user:{USER}"
+    items = api(f"/search/issues?q={urllib.parse.quote(query)}&sort=created&order=desc&per_page={limit}")["items"]
+    lines = []
+    for it in items:
+        repo = it["repository_url"].split("/repos/", 1)[1]
+        draft = " (draft)" if it.get("draft") else ""
+        lines.append(f"- **[{repo}#{it['number']}]({it['html_url']})** {it['title']}{draft} <sub>opened {it['created_at'][:10]}</sub>")
+    return "\n".join(lines) or "_Nothing open right now._"
+
+
 def deploys(limit: int = 5) -> str:
     """The portfolio's latest finished deploys: commit, result, date and duration."""
     runs = api(f"/repos/{PORTFOLIO}/actions/workflows/deploy.yml/runs?per_page=30")["workflow_runs"]
@@ -91,7 +103,7 @@ def main() -> int:
     with open(README, encoding="utf-8") as f:
         text = f.read()
     updated = text
-    for name, build in (("merged-prs", merged_prs), ("deploys", deploys)):
+    for name, build in (("open-prs", open_prs), ("merged-prs", merged_prs), ("deploys", deploys)):
         try:
             updated = replace(updated, name, build())
         except Exception as e:  # keep the old section; say why in the job log

@@ -1,6 +1,6 @@
 name: update readme
 
-# Refresh the merged pull requests and the portfolio's deploys every four hours, and whenever the
+# Refresh the open and merged pull requests and the portfolio's deploys every four hours, and whenever the
 # script changes. Pushes made with GITHUB_TOKEN do not start new runs, so this cannot loop.
 on:
   schedule:
