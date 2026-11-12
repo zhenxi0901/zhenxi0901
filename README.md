@@ -2,9 +2,9 @@
 
 <a href="https://portfolio-emsghin2iq-as.a.run.app">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:0d1117,100:1a2e05&text=Li%20ZhenXi&fontColor=c2f75c&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
-    <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:ffffff,100:d9f99d&text=Li%20ZhenXi&fontColor=365314&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
-    <img width="100%" alt="Li ZhenXi: SRE, cloud and AI infrastructure" src="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:ffffff,100:d9f99d&text=Li%20ZhenXi&fontColor=365314&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:0d1117%2C100:1a2e05&text=Li%20ZhenXi&fontColor=c2f75c&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
+    <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:ffffff%2C100:d9f99d&text=Li%20ZhenXi&fontColor=365314&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
+    <img width="100%" alt="Li ZhenXi: SRE, cloud and AI infrastructure" src="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:ffffff%2C100:d9f99d&text=Li%20ZhenXi&fontColor=365314&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
   </picture>
 </a>
 
