@@ -1,10 +1,18 @@
 <div align="center">
 
 <a href="https://portfolio-emsghin2iq-as.a.run.app">
-  <img width="100%" alt="Li ZhenXi: SRE, cloud and AI infrastructure" src="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:0d1117,100:1a2e05&text=Li%20ZhenXi&fontColor=c2f75c&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:0d1117,100:1a2e05&text=Li%20ZhenXi&fontColor=c2f75c&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
+    <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:ffffff,100:d9f99d&text=Li%20ZhenXi&fontColor=365314&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
+    <img width="100%" alt="Li ZhenXi: SRE, cloud and AI infrastructure" src="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:ffffff,100:d9f99d&text=Li%20ZhenXi&fontColor=365314&fontSize=58&fontAlignY=36&desc=SRE%20%C2%B7%20Cloud%20%C2%B7%20AI%20infrastructure&descSize=18&descAlignY=58&section=header" />
+  </picture>
 </a>
 
-<img alt="I run Kubernetes in production on Google Cloud. I run an AI agent platform on Cloud Run. I benchmark LLM agents on A100 GPUs. My portfolio is an MCP server: ask it from your own agent." src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&pause=1600&color=C2F75C&center=true&vCenter=true&width=640&lines=I+run+Kubernetes+in+production+on+Google+Cloud;I+run+an+AI+agent+platform+on+Cloud+Run;I+benchmark+LLM+agents+on+A100+GPUs;SLOs%2C+error+budgets+and+burn-rate+alerts;My+portfolio+is+an+MCP+server%3A+ask+it+from+your+agent" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&pause=1600&color=C2F75C&center=true&vCenter=true&width=640&lines=I+run+Kubernetes+in+production+on+Google+Cloud;I+run+an+AI+agent+platform+on+Cloud+Run;I+benchmark+LLM+agents+on+A100+GPUs;SLOs%2C+error+budgets+and+burn-rate+alerts;My+portfolio+is+an+MCP+server%3A+ask+it+from+your+agent" />
+  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&pause=1600&color=3F6212&center=true&vCenter=true&width=640&lines=I+run+Kubernetes+in+production+on+Google+Cloud;I+run+an+AI+agent+platform+on+Cloud+Run;I+benchmark+LLM+agents+on+A100+GPUs;SLOs%2C+error+budgets+and+burn-rate+alerts;My+portfolio+is+an+MCP+server%3A+ask+it+from+your+agent" />
+  <img alt="I run Kubernetes in production on Google Cloud. I run an AI agent platform on Cloud Run. I benchmark LLM agents on A100 GPUs. My portfolio is an MCP server: ask it from your own agent." src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&pause=1600&color=3F6212&center=true&vCenter=true&width=640&lines=I+run+Kubernetes+in+production+on+Google+Cloud;I+run+an+AI+agent+platform+on+Cloud+Run;I+benchmark+LLM+agents+on+A100+GPUs;SLOs%2C+error+budgets+and+burn-rate+alerts;My+portfolio+is+an+MCP+server%3A+ask+it+from+your+agent" />
+</picture>
 
 Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-author<br>
 **Open to 2027 roles in SRE, cloud and AI infrastructure.**
@@ -24,10 +32,10 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 
 | | What it is | My part |
 |---|---|---|
-| **Building IoT platform**<br><sub>Primustech</sub> | Live data from building systems (sensors, HVAC, meters), with the dashboards and alarms facility teams use. Kubernetes on GKE. | Moved it from one VM to GKE microservices with Terraform. Own its Cloud Build CI/CD: 169 of my PRs merged on the platform so far. Cut cloud spend ~15%. Grafana dashboards and alerts. Wrote the safety pattern its remote-control lanes are measured against (the control bridge has 431 tests), and roll out security and reliability changes in steps that can each be undone.<br><sub>Case studies: [GKE migration](https://portfolio-emsghin2iq-as.a.run.app/work/gke) · [delivery pipeline](https://portfolio-emsghin2iq-as.a.run.app/work/pipeline) · [cost cut](https://portfolio-emsghin2iq-as.a.run.app/work/reaper) · [alerting](https://portfolio-emsghin2iq-as.a.run.app/work/observability) · [remote control that fails safe](https://portfolio-emsghin2iq-as.a.run.app/work/control) · [changes in reversible steps](https://portfolio-emsghin2iq-as.a.run.app/work/two-step) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/iot)</sub> |
-| **AI agent platform**<br><sub>Primustech</sub> | Two agents for facility teams: one answers from live building data, the other from company documents (RAG). Cloud Run and Vertex AI. | Deploy and run the agent and RAG services in dev, staging and production. Per-environment CI/CD, IAM, secrets and shared-VPC networking. Latency, token-cost and model benchmarks.<br><sub>[Case study](https://portfolio-emsghin2iq-as.a.run.app/work/ai-platform) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/ai)</sub> |
-| **ARIES agent benchmarks**<br><sub>NTU HyScale Lab, final-year project</sub> | Long-horizon LLM agent workloads on the lab's open-source agent-serving framework. | The Toolathlon adapter for ARIES, and an Apptainer backend so the whole stack runs on a supercomputer without Docker or root (6,678 lines, merged Nov 2026). 320 agent runs benchmarked on a hosted API and on self-hosted SGLang on an A100, then 48 more instrumented to see what each MCP tool server costs per call.<br><sub>[Findings](https://portfolio-emsghin2iq-as.a.run.app/research) · [running it without root](https://portfolio-emsghin2iq-as.a.run.app/writing/agents-without-root) · [ARIES](https://github.com/hyscale-lab/ARIES)</sub> |
-| **Robot car**<br><sub>NTU Multidisciplinary Design Project, Aug to Oct 2026</sub> | An autonomous car: an STM32 drives it, a Raspberry Pi links it to the tablet, and a laptop plans the route and recognises targets in the Pi's camera feed. | The Android tablet controller, in Kotlin: 21 merged PRs. Made the tablet and the Pi agree on the map, and removed a planning state the app could never leave.<br><sub>[Repository](https://github.com/whupdido/mdp)</sub> |
+| **Building IoT platform**<br><sub>Primustech</sub> | Live data from building systems (sensors, HVAC, meters), with the dashboards and alarms facility teams use. Kubernetes on GKE. | **169 of my PRs merged.** Moved it from one VM to GKE microservices with Terraform, and own its Cloud Build CI/CD. Cut cloud spend ~15%. Grafana dashboards and alerts. Wrote the safety pattern its remote-control lanes are measured against (the control bridge has 431 tests), and roll out security and reliability changes in steps that can each be undone.<br><sub>Case studies: [GKE migration](https://portfolio-emsghin2iq-as.a.run.app/work/gke) · [delivery pipeline](https://portfolio-emsghin2iq-as.a.run.app/work/pipeline) · [cost cut](https://portfolio-emsghin2iq-as.a.run.app/work/reaper) · [alerting](https://portfolio-emsghin2iq-as.a.run.app/work/observability) · [remote control that fails safe](https://portfolio-emsghin2iq-as.a.run.app/work/control) · [changes in reversible steps](https://portfolio-emsghin2iq-as.a.run.app/work/two-step) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/iot)</sub> |
+| **AI agent platform**<br><sub>Primustech</sub> | Two agents for facility teams: one answers from live building data, the other from company documents (RAG). Cloud Run and Vertex AI. | **3 environments, deployed the same way.** I deploy and run the agent and RAG services in dev, staging and production: per-environment CI/CD, IAM, secrets and shared-VPC networking. Latency, token-cost and model benchmarks.<br><sub>[Case study](https://portfolio-emsghin2iq-as.a.run.app/work/ai-platform) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/ai)</sub> |
+| **ARIES agent benchmarks**<br><sub>NTU HyScale Lab, final-year project</sub> | Long-horizon LLM agent workloads on the lab's open-source agent-serving framework. | **320 agent runs benchmarked; 6,678 lines merged upstream.** The Toolathlon adapter for ARIES, and an Apptainer backend so the whole stack runs on a supercomputer without Docker or root (merged Nov 2026). The runs used a hosted API and self-hosted SGLang on an A100, then 48 more were instrumented to see what each MCP tool server costs per call.<br><sub>[Findings](https://portfolio-emsghin2iq-as.a.run.app/research) · [running it without root](https://portfolio-emsghin2iq-as.a.run.app/writing/agents-without-root) · [ARIES](https://github.com/hyscale-lab/ARIES)</sub> |
+| **Robot car**<br><sub>NTU Multidisciplinary Design Project, Aug to Oct 2026</sub> | An autonomous car: an STM32 drives it, a Raspberry Pi links it to the tablet, and a laptop plans the route and recognises targets in the Pi's camera feed. | **21 merged PRs.** The Android tablet controller, in Kotlin. Made the tablet and the Pi agree on the map, and removed a planning state the app could never leave.<br><sub>[Repository](https://github.com/whupdido/mdp)</sub> |
 
 ## See it running
 
@@ -140,6 +148,9 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 
 Every push to `main` runs lint, tests, a container smoke test, Lighthouse budgets and a CVE gate on one image, which CI then signs with an SBOM and build provenance. The deploy verifies those, holds the release if the error budget is spent, smoke-tests the new revision before it takes traffic and rolls back on its own if the live checks fail. Each release is a [GitHub release](https://github.com/zhenxi0901/portfolio/releases); the full history is in the [changelog](https://portfolio-emsghin2iq-as.a.run.app/changelog). Refreshed every four hours.
 
+<details>
+<summary>The last five deploys</summary>
+
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
@@ -149,6 +160,8 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 | [`7ed7870`](https://github.com/zhenxi0901/portfolio/commit/7ed7870a306c6996fe04c6b8a58573b3b8e4b238) The on-call drills in the terminal: oncall iot, oncall ai | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42987919138) | 2026-11-11 08:33 | 1m 47s |
 | [`c358892`](https://github.com/zhenxi0901/portfolio/commit/c3588923d22fdae6f45bace57dd397e02abe20b7) Hero: no THREE.Clock deprecation warning in the console | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42983687200) | 2026-11-11 08:00 | 1m 45s |
 <!-- deploys:end -->
+
+</details>
 
 ## Numbers I can back up
 
@@ -161,32 +174,10 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 
 ## Stack
 
-<table>
-  <tr><td><b>Cloud and infra</b></td><td><img alt="Google Cloud, AWS, Kubernetes, Docker, Terraform, Linux" src="https://skillicons.dev/icons?i=gcp,aws,kubernetes,docker,terraform,linux&theme=dark" /></td></tr>
-  <tr><td><b>Delivery and reliability</b></td><td><img alt="GitHub Actions, Git, Prometheus, Grafana" src="https://skillicons.dev/icons?i=githubactions,git,prometheus,grafana&theme=dark" /></td></tr>
-  <tr><td><b>Languages</b></td><td><img alt="Python, Java, Bash, Go" src="https://skillicons.dev/icons?i=python,java,bash,golang&theme=dark" /></td></tr>
-  <tr><td><b>Data and messaging</b></td><td><img alt="Kafka, Redis, PostgreSQL" src="https://skillicons.dev/icons?i=kafka,redis,postgresql&theme=dark" /></td></tr>
-  <tr><td><b>AI infrastructure</b></td><td>
-    <img alt="PyTorch" src="https://skillicons.dev/icons?i=pytorch&theme=dark" />
-    <img alt="SGLang" src="https://img.shields.io/badge/SGLang-0d1117?style=for-the-badge&labelColor=0d1117&color=0d1117" />
-    <img alt="NVIDIA A100" src="https://img.shields.io/badge/A100-0d1117?style=for-the-badge&logo=nvidia&logoColor=76B900" />
-    <img alt="Vertex AI" src="https://img.shields.io/badge/Vertex%20AI-0d1117?style=for-the-badge&logo=googlecloud&logoColor=4285F4" />
-    <img alt="Milvus" src="https://img.shields.io/badge/Milvus-0d1117?style=for-the-badge&logo=milvus&logoColor=00A1EA" />
-    <img alt="Langfuse" src="https://img.shields.io/badge/Langfuse-0d1117?style=for-the-badge" />
-  </td></tr>
-</table>
+- **Cloud and infrastructure:** Google Cloud (GKE, Cloud Run, Cloud Build, Vertex AI), AWS, Kubernetes, Docker, Terraform, Linux
+- **Delivery and reliability:** GitHub Actions, Git, Prometheus, Grafana, OpenTelemetry
+- **Languages:** Go, Python, Java, Bash, TypeScript
+- **Data and messaging:** Kafka, Redis, PostgreSQL
+- **AI infrastructure:** SGLang, PyTorch, NVIDIA A100, Milvus, Langfuse
 
-## Activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/output/snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/output/snake-light.svg" />
-  <img alt="My contribution graph, eaten by a snake" src="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/output/snake-dark.svg" />
-</picture>
-
-<p align="center">
-  <img alt="Contribution streak" src="https://streak-stats.demolab.com?user=zhenxi0901&theme=dark&hide_border=true&background=0D1117&ring=C2F75C&fire=C2F75C&currStreakLabel=C2F75C" />
-</p>
-
-
-<sub>This README keeps itself current: a GitHub Action pulls my open and merged pull requests and my portfolio's deploys every four hours, and another redraws the contribution snake daily.</sub>
+<sub>This README keeps itself current: a GitHub Action pulls my open and merged pull requests and my portfolio's deploys every four hours, and the card above is drawn live by my portfolio's own server.</sub>
