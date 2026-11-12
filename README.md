@@ -53,6 +53,14 @@ My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production 
 
 [Status](https://portfolio-emsghin2iq-as.a.run.app/status) · [Changelog](https://portfolio-emsghin2iq-as.a.run.app/changelog) · [Why it's built this way](https://portfolio-emsghin2iq-as.a.run.app/decisions) · [For agents](https://portfolio-emsghin2iq-as.a.run.app/agents) · [Evidence for the claims](https://portfolio-emsghin2iq-as.a.run.app/evidence) · [Take the 60-second tour](https://portfolio-emsghin2iq-as.a.run.app/?tour)
 
+### Try it yourself
+
+- **[Break it yourself](https://portfolio-emsghin2iq-as.a.run.app/break)**: inject delays and 503s into your own requests to the live server, and watch retries, a circuit breaker and hedging cope, attempt by attempt.
+- **[Debug the real server in a Codespace](https://codespaces.new/zhenxi0901/portfolio?ref=drill/01&quickstart=1)**: a branch of my portfolio with one bug planted in it. `make drill` shows the symptoms, `make check` grades your fix.
+- **[What it costs](https://portfolio-emsghin2iq-as.a.run.app/cost)**: this month's bill, metered request by request, where the money goes, and what a traffic spike would do to it.
+- **[Size a GPU for agents](https://portfolio-emsghin2iq-as.a.run.app/research#capacity)**: KV cache, decode speed and cost per agent task, starting from my FYP's measurements.
+- **[dora-card](https://github.com/zhenxi0901/dora-card)**: the four DORA metrics from my pipeline, extracted into a GitHub Action any repository can use for a README card.
+
 ### Ask it with your own agent
 
 The portfolio is also a [Model Context Protocol](https://modelcontextprotocol.io) server: five read-only tools over its own facts and live numbers, with no key and no model on my side. Add it to Claude Code, or give the URL to any MCP client:
@@ -81,12 +89,12 @@ Some of what is on it:
     <td><sub><b>SLOs and error budgets</b>, with multi-window burn-rate alerts and a replayable incident.</sub></td>
   </tr>
   <tr>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/work/reaper"><img alt="A case study page: the numbers, then a working model of the system" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/case-page.webp" /></a></td>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/postmortems/contact-form"><img alt="A postmortem page: impact in numbers, then the write-up" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/postmortem.webp" /></a></td>
+    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/break"><img alt="Break it yourself: a retry run against 30% errors, every attempt on a timeline" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/break.webp" /></a></td>
+    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/cost"><img alt="What it costs: the month's receipt and where the money goes" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/cost.webp" /></a></td>
   </tr>
   <tr>
-    <td><sub><b>A page per case study</b>: the numbers, a working model to press, and the full write-up.</sub></td>
-    <td><sub><b>Postmortems</b> from running the site itself, sourced from commits and Cloud Run's logs.</sub></td>
+    <td><sub><b>Break it yourself</b>: delays and 503s on your own requests to the live server, and four clients coping, attempt by attempt.</sub></td>
+    <td><sub><b>What it costs</b>: this month's bill from the server's own meters, and what a busy day would do to it.</sub></td>
   </tr>
   <tr>
     <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/oncall"><img alt="The on-call drill: paged, investigating, the error budget burning" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/oncall-drill.webp" /></a></td>
