@@ -143,11 +143,11 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
+| [`1147391`](https://github.com/zhenxi0901/portfolio/commit/1147391e3ead63813f73bc6b60ca1607f29bf0a6) Old /#work-ai links land on the AI chapter | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43151557398) | 2026-11-12 03:57 | 1m 39s |
+| [`07a8dc0`](https://github.com/zhenxi0901/portfolio/commit/07a8dc0265759c6d83d1c96535a37993beef808d) Re-review of the chapter split: 404, focus, chapter marks, live panel | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43150456511) | 2026-11-12 03:46 | 1m 48s |
+| [`b6c333d`](https://github.com/zhenxi0901/portfolio/commit/b6c333d0e62b6af44cef667c811ff2f125cdd6de) Split the one-page site into chapters | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43141330564) | 2026-11-12 02:25 | 1m 43s |
 | [`7ed7870`](https://github.com/zhenxi0901/portfolio/commit/7ed7870a306c6996fe04c6b8a58573b3b8e4b238) The on-call drills in the terminal: oncall iot, oncall ai | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42987919138) | 2026-11-11 08:33 | 1m 47s |
 | [`c358892`](https://github.com/zhenxi0901/portfolio/commit/c3588923d22fdae6f45bace57dd397e02abe20b7) Hero: no THREE.Clock deprecation warning in the console | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42983687200) | 2026-11-11 08:00 | 1m 45s |
-| [`d6623c6`](https://github.com/zhenxi0901/portfolio/commit/d6623c6614d8608d6ac9389d1172804db955577b) Fixes from the bug re-check, and accessibility in every state | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42981392391) | 2026-11-11 07:41 | 1m 49s |
-| [`e97c690`](https://github.com/zhenxi0901/portfolio/commit/e97c6901b83eddf8ac2248f824cf5c6bbc004e59) A second on-call drill, on the AI agent platform; arrow keys on every tab strip | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42977289885) | 2026-11-11 07:08 | 1m 40s |
-| [`d48410f`](https://github.com/zhenxi0901/portfolio/commit/d48410ff11260db3bfe109fc41d22e77550c46ae) Fixes from three reviews: MCP, the text card, the terminal and the pages | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42971864077) | 2026-11-11 06:21 | 1m 45s |
 <!-- deploys:end -->
 
 ## Numbers I can back up
