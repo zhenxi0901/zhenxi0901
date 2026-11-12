@@ -162,11 +162,11 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
-| [`1147391`](https://github.com/zhenxi0901/portfolio/commit/1147391e3ead63813f73bc6b60ca1607f29bf0a6) Old /#work-ai links land on the AI chapter | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43151557398) | 2026-11-12 03:57 | 1m 39s |
-| [`07a8dc0`](https://github.com/zhenxi0901/portfolio/commit/07a8dc0265759c6d83d1c96535a37993beef808d) Re-review of the chapter split: 404, focus, chapter marks, live panel | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43150456511) | 2026-11-12 03:46 | 1m 48s |
-| [`b6c333d`](https://github.com/zhenxi0901/portfolio/commit/b6c333d0e62b6af44cef667c811ff2f125cdd6de) Split the one-page site into chapters | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43141330564) | 2026-11-12 02:25 | 1m 43s |
-| [`7ed7870`](https://github.com/zhenxi0901/portfolio/commit/7ed7870a306c6996fe04c6b8a58573b3b8e4b238) The on-call drills in the terminal: oncall iot, oncall ai | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42987919138) | 2026-11-11 08:33 | 1m 47s |
-| [`c358892`](https://github.com/zhenxi0901/portfolio/commit/c3588923d22fdae6f45bace57dd397e02abe20b7) Hero: no THREE.Clock deprecation warning in the console | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/42983687200) | 2026-11-11 08:00 | 1m 45s |
+| [`1ce2814`](https://github.com/zhenxi0901/portfolio/commit/1ce28142c361d36c264275843b47bb17f028566c) README: the live-map hero, /break, /cost, the capacity lab and the drill | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43206526839) | 2026-11-12 11:08 | 1m 46s |
+| [`8596fc1`](https://github.com/zhenxi0901/portfolio/commit/8596fc1341c0b95ef09780a16a23e1f2ba30cf1e) Hero: a live map of this site's own request path | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43202936235) | 2026-11-12 10:43 | 1m 44s |
+| [`b99bb03`](https://github.com/zhenxi0901/portfolio/commit/b99bb03d9692778244122fe3d314e9bc168a8579) Research: a capacity lab for serving agents on one GPU | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43200179437) | 2026-11-12 10:25 | 1m 41s |
+| [`d526b87`](https://github.com/zhenxi0901/portfolio/commit/d526b87adcb7bb3e8536acfe662348f98394a9a3) Break it yourself: fault injection on the live server at /break | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43198179147) | 2026-11-12 10:11 | 1m 47s |
+| [`8533f74`](https://github.com/zhenxi0901/portfolio/commit/8533f74938fc6c794437e59cb9b32596706c0516) What this site costs: a live receipt at /cost | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43195690606) | 2026-11-12 09:55 | 1m 53s |
 <!-- deploys:end -->
 
 </details>
