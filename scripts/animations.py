@@ -582,13 +582,14 @@ def level_of(count: int, bounds: tuple) -> int:
 
 
 def column_flip_times(ncols: int) -> list:
-    """Second at which each week column switches to v2: stage by stage, left to right,
-    with a small stagger inside each stage."""
+    """Second at which each week column switches to v2: stage by stage, newest week first
+    (right to left, the way a canary takes the newest traffic), with a small stagger inside
+    each stage."""
     flips, done = [0.0] * ncols, 0
     for share, start in CANARY_STAGES:
         upto = min(ncols, max(done + 1, math.ceil(share * ncols)))
-        for k, col in enumerate(range(done, upto)):
-            flips[col] = start + k * COLUMN_STAGGER
+        for k, step in enumerate(range(done, upto)):
+            flips[ncols - 1 - step] = start + k * COLUMN_STAGGER
         done = upto
     return flips
 
@@ -700,8 +701,7 @@ def build_canary(cal: Calendar, health: Health, theme: str) -> str:
         f'<text x="{left}" y="31" font-size="13" class="fs">'
         f'<tspan class="ca" font-weight="700">canary rollout</tspan>'
         f'<tspan class="cm"> · </tspan><tspan class="ct">{esc(GITHUB_USER)}</tspan>'
-        f'<tspan class="cm"> · </tspan><tspan class="ct" font-weight="600">{cal.total:,}</tspan>'
-        f'<tspan class="cm"> contributions in the last year</tspan></text>'
+        f'<tspan class="cm"> · my last 12 months of contributions, newest first</tspan></text>'
     )
     x = right
     for label, colour in (("v2 new", th["levels"][4]), ("v1 old", th["old_levels"][4])):

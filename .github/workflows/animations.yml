@@ -4,6 +4,9 @@ name: animations
 # the canary rollout and the terminal replay (scripts/animations.py: my real contributions, and what
 # my site answers curl right now) and the snake, in my colours. The branch holds only the latest
 # drawings: each run replaces it with a single commit, so it never grows.
+#
+# Two jobs: drawing runs a third-party action (the snake), so it gets a read-only token; publishing
+# gets write access and runs nothing but git and GitHub's own artifact action.
 on:
   schedule:
     - cron: "41 */6 * * *"
@@ -13,7 +16,7 @@ on:
     paths: ["scripts/animations.py", ".github/workflows/animations.yml"]
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: animations
@@ -24,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -40,6 +43,25 @@ jobs:
           outputs: |
             dist/snake-dark.svg?palette=github-dark&color_snake=#c2f75c&color_dots=#161b22,#1a2e05,#3a5a0b,#6b9a14,#c2f75c
             dist/snake-light.svg?color_snake=#3f6212&color_dots=#ebedf0,#d9f99d,#a3e635,#65a30d,#3f6212
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: animations
+          path: dist
+          retention-days: 1
+          if-no-files-found: error
+
+  publish:
+    needs: draw
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: animations
+          path: dist
 
       - name: Publish to the animations branch
         env:

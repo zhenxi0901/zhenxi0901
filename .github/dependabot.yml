@@ -1,0 +1,9 @@
+# Monthly, grouped updates for the actions this repository pins by SHA. One pull request a month at
+# most; the workflows only read public data and write this repository's own branches.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: monthly }
+    groups:
+      actions: { patterns: ["*"] }

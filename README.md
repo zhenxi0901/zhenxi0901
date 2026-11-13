@@ -14,7 +14,7 @@
   <img alt="I run Kubernetes in production on Google Cloud. I benchmark LLM agents on A100 GPUs. Live on my portfolio now: commit 79f06d1, 99.999% up. 60 deploys in 30 days, median lead time 8 min. Latest merged PR: ARIES#92 Add an Apptainer deployment… Open an issue titled &quot;ask: ...&quot; and my site replies." src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&pause=1600&color=3F6212&center=true&vCenter=true&width=640&lines=I+run+Kubernetes+in+production+on+Google+Cloud;I+benchmark+LLM+agents+on+A100+GPUs;Live+on+my+portfolio+now%3A+commit+79f06d1%2C+99.999%25+up;60+deploys+in+30+days%2C+median+lead+time+8+min;Latest+merged+PR%3A+ARIES%2392+Add+an+Apptainer+deployment%E2%80%A6;Open+an+issue+titled+%22ask%3A+...%22+and+my+site+replies" />
 </picture>
 
-Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-author<br>
+DevOps intern at Primustech · Computer Science at NTU, graduating June 2027 · [ICCV 2025 co-author](https://portfolio-emsghin2iq-as.a.run.app/research)<br>
 **Open to 2027 roles in SRE, cloud and AI infrastructure.**
 
 <a href="https://portfolio-emsghin2iq-as.a.run.app"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-c2f75c?style=for-the-badge&logo=googlecloud&logoColor=0d1117" /></a>
@@ -22,7 +22,7 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 <a href="mailto:zli057@e.ntu.edu.sg"><img alt="Email" src="https://img.shields.io/badge/Email-1f2937?style=for-the-badge&logo=gmail&logoColor=c2f75c" /></a>
 
 <a href="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml"><img alt="Commit live on my portfolio right now" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fportfolio-emsghin2iq-as.a.run.app%2Fapi%2Fstatus&query=%24.commit&label=live%20commit&style=flat-square&labelColor=1f2937&color=c2f75c&logo=googlecloud&logoColor=c2f75c" /></a>
-<a href="https://portfolio-emsghin2iq-as.a.run.app/status"><img alt="Portfolio uptime over 30 days, from Google Cloud uptime checks" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fportfolio-emsghin2iq-as.a.run.app%2Fapi%2Fbadge%2Fuptime&style=flat-square&labelColor=1f2937&logo=googlecloud&logoColor=c2f75c" /></a>
+<a href="https://portfolio-emsghin2iq-as.a.run.app/status"><img alt="My portfolio's uptime, measured from outside by Google Cloud uptime checks" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fportfolio-emsghin2iq-as.a.run.app%2Fapi%2Fbadge%2Fuptime&style=flat-square&labelColor=1f2937&logo=googlecloud&logoColor=c2f75c" /></a>
 <a href="https://github.com/zhenxi0901/portfolio/actions/workflows/ci.yml"><img alt="Portfolio CI" src="https://github.com/zhenxi0901/portfolio/actions/workflows/ci.yml/badge.svg" /></a>
 <a href="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml"><img alt="Portfolio deploy" src="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml/badge.svg" /></a>
 
@@ -30,31 +30,30 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 
 ## What I work on
 
-| | What it is | My part |
-|---|---|---|
-| **Building IoT platform**<br><sub>Primustech</sub> | Live data from building systems (sensors, HVAC, meters), with the dashboards and alarms facility teams use. Kubernetes on GKE. | **169 of my PRs merged.** Moved it from one VM to GKE microservices with Terraform, and own its Cloud Build CI/CD. Cut cloud spend ~15%. Grafana dashboards and alerts. Wrote the safety pattern its remote-control lanes are measured against (the control bridge has 431 tests), and roll out security and reliability changes in steps that can each be undone.<br><sub>Case studies: [GKE migration](https://portfolio-emsghin2iq-as.a.run.app/work/gke) · [delivery pipeline](https://portfolio-emsghin2iq-as.a.run.app/work/pipeline) · [cost cut](https://portfolio-emsghin2iq-as.a.run.app/work/reaper) · [alerting](https://portfolio-emsghin2iq-as.a.run.app/work/observability) · [remote control that fails safe](https://portfolio-emsghin2iq-as.a.run.app/work/control) · [changes in reversible steps](https://portfolio-emsghin2iq-as.a.run.app/work/two-step) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/iot)</sub> |
-| **AI agent platform**<br><sub>Primustech</sub> | Two agents for facility teams: one answers from live building data, the other from company documents (RAG). Cloud Run and Vertex AI. | **3 environments, deployed the same way.** I deploy and run the agent and RAG services in dev, staging and production: per-environment CI/CD, IAM, secrets and shared-VPC networking. Latency, token-cost and model benchmarks.<br><sub>[Case study](https://portfolio-emsghin2iq-as.a.run.app/work/ai-platform) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/ai)</sub> |
-| **ARIES agent benchmarks**<br><sub>NTU HyScale Lab, final-year project</sub> | Long-horizon LLM agent workloads on the lab's open-source agent-serving framework. | **320 agent runs benchmarked; 6,678 lines merged upstream.** The Toolathlon adapter for ARIES, and an Apptainer backend so the whole stack runs on a supercomputer without Docker or root (merged Nov 2026). The runs used a hosted API and self-hosted SGLang on an A100, then 48 more were instrumented to see what each MCP tool server costs per call.<br><sub>[Findings](https://portfolio-emsghin2iq-as.a.run.app/research) · [running it without root](https://portfolio-emsghin2iq-as.a.run.app/writing/agents-without-root) · [ARIES](https://github.com/hyscale-lab/ARIES)</sub> |
-| **Robot car**<br><sub>NTU Multidisciplinary Design Project, Aug to Oct 2026</sub> | An autonomous car: an STM32 drives it, a Raspberry Pi links it to the tablet, and a laptop plans the route and recognises targets in the Pi's camera feed. | **21 merged PRs.** The Android tablet controller, in Kotlin. Made the tablet and the Pi agree on the map, and removed a planning state the app could never leave.<br><sub>[Repository](https://github.com/whupdido/mdp)</sub> |
+**Building IoT platform** · <sub>Primustech</sub><br>
+Live data from building systems (sensors, HVAC, meters), with the dashboards and alarms facility teams use, on GKE. **169 of my PRs merged.** I moved it from one VM to GKE microservices with Terraform, own its Cloud Build CI/CD, cut its cloud spend by an estimated ~15%, built its Grafana dashboards and alerts, and wrote the safety pattern its remote-control lanes are measured against (431 tests on the control bridge). Security and reliability changes go out in steps that can each be undone.<br>
+<sub>Case studies: [GKE migration](https://portfolio-emsghin2iq-as.a.run.app/work/gke) · [delivery pipeline](https://portfolio-emsghin2iq-as.a.run.app/work/pipeline) · [cost cut](https://portfolio-emsghin2iq-as.a.run.app/work/reaper) · [alerting](https://portfolio-emsghin2iq-as.a.run.app/work/observability) · [remote control that fails safe](https://portfolio-emsghin2iq-as.a.run.app/work/control) · [changes in reversible steps](https://portfolio-emsghin2iq-as.a.run.app/work/two-step) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/iot)</sub>
 
-## Numbers I can back up
+**AI agent platform** · <sub>Primustech</sub><br>
+Two agents for facility teams, one answering from live building data and one from company documents (RAG), on Cloud Run and Vertex AI. **3 environments, deployed the same way.** I deploy and run the agent and RAG services in dev, staging and production: per-environment CI/CD, IAM, secrets and shared-VPC networking, with latency, token-cost and model benchmarks.<br>
+<sub>[Case study](https://portfolio-emsghin2iq-as.a.run.app/work/ai-platform) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/ai)</sub>
+
+**ARIES agent benchmarks** · <sub>NTU HyScale Lab, final-year project</sub><br>
+Long-horizon LLM agent workloads on the lab's open-source agent-serving framework. **320 agent runs benchmarked; 6,678 lines merged upstream.** The Toolathlon adapter for ARIES, and an Apptainer backend so the whole stack runs on a supercomputer without Docker or root. The runs used a hosted API and self-hosted SGLang on an A100; 48 more were instrumented to see what each MCP tool server costs per call.<br>
+<sub>[Findings](https://portfolio-emsghin2iq-as.a.run.app/research) · [running it without root](https://portfolio-emsghin2iq-as.a.run.app/writing/agents-without-root) · [ARIES](https://github.com/hyscale-lab/ARIES)</sub>
+
+**Robot car** · <sub>NTU Multidisciplinary Design Project, Aug to Oct 2026</sub><br>
+An autonomous car: an STM32 drives it, a Raspberry Pi links it to the tablet, and a laptop plans the route and recognises targets in the Pi's camera feed. **21 merged PRs.** The Android tablet controller, in Kotlin: I made the tablet and the Pi agree on the map, and removed a planning state the app could never leave.<br>
+<sub>[Repository](https://github.com/whupdido/mdp)</sub>
+
+## In numbers
 
 - **~15%** lower cloud spend, as estimated in my cost review (the work itself is private): 914 orphaned Kafka topics reaped, monitoring samples cut 40%, Cloud SQL and pods right-sized.
 - **320** LLM agent runs benchmarked: MCP tool calls are 2.7% of agent time, and 96% of input tokens come from the prefix cache.
-- **~7x** more A100 time held by serving jobs than the agents used.
+- **~7x**: serving jobs held the A100 about seven times longer than the agents used it.
 - **3.02x** throughput from four isolated agent tasks at once on one VM.
 - **10** principles for remote control of building equipment, each traced to the finding behind it, and **431** tests on the bridge that applies them.
 - **6,678** lines across 46 files: the Apptainer backend that runs ARIES on a supercomputer without root, merged upstream.
-
-## My last year, rolled out
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/canary-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/canary-light.svg" />
-  <img width="100%" alt="My last year of GitHub contributions, rolled out like a release: a canary takes 1% of the weeks, then 5, 25, 50 and 100%, with my site's live health beside it" src="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/canary-light.svg" />
-</picture>
-
-<sub>My real contribution graph, shipped the way I ship releases: a canary takes a few weeks first, then more, while the health line reads my site's live numbers. Redrawn every 6 hours by a GitHub Action from the GraphQL API.</sub>
 
 ## See it running
 
@@ -72,7 +71,7 @@ My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production 
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://portfolio-emsghin2iq-as.a.run.app/api/card.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://portfolio-emsghin2iq-as.a.run.app/api/card.svg?theme=light" />
-    <img width="100%" alt="Live from my portfolio's Go server: the running commit, 30-day uptime, error budget left, release policy, DORA metrics and the last rollback drill" src="https://portfolio-emsghin2iq-as.a.run.app/api/card.svg" />
+    <img width="100%" alt="Live from my portfolio's Go server: the running commit, its uptime, error budget left, release policy, DORA metrics and the last rollback drill" src="https://portfolio-emsghin2iq-as.a.run.app/api/card.svg?theme=light" />
   </picture>
 </a>
 
@@ -82,8 +81,8 @@ My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production 
 
 ### Try it yourself
 
-- **[Break it yourself](https://portfolio-emsghin2iq-as.a.run.app/break)**: inject delays and 503s into your own requests to the live server, and watch retries, a circuit breaker and hedging cope, attempt by attempt.
 - **[Debug the real server in a Codespace](https://codespaces.new/zhenxi0901/portfolio?ref=drill/01&quickstart=1)**: a branch of my portfolio with one bug planted in it. `make drill` shows the symptoms, `make check` grades your fix.
+- **[Break it yourself](https://portfolio-emsghin2iq-as.a.run.app/break)**: inject delays and 503s into your own requests to the live server, and watch retries, a circuit breaker and hedging cope, attempt by attempt.
 - **[What it costs](https://portfolio-emsghin2iq-as.a.run.app/cost)**: this month's bill, metered request by request, where the money goes, and what a traffic spike would do to it.
 - **[Size a GPU for agents](https://portfolio-emsghin2iq-as.a.run.app/research#capacity)**: KV cache, decode speed and cost per agent task, starting from my FYP's measurements.
 - **[dora-card](https://github.com/zhenxi0901/dora-card)**: the four DORA metrics from my pipeline, extracted into a GitHub Action any repository can use for a README card.
@@ -105,49 +104,12 @@ curl https://portfolio-emsghin2iq-as.a.run.app
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/terminal-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/terminal-light.svg" />
-  <img alt="A terminal running curl against my portfolio and printing the text card it answers with: the live commit, uptime and SLO" src="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/terminal-light.svg" />
+  <img width="100%" alt="A terminal running curl against my portfolio and printing the text card it answers with: the live commit, uptime and SLO" src="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/terminal-light.svg" />
 </picture>
 
 Or ask right here on GitHub: [open an issue titled `ask: …`](https://github.com/zhenxi0901/zhenxi0901/issues/new?template=ask.yml) and my site answers it within a minute, from its own facts, then closes it.
 
 [How to connect, and a console that sends real requests](https://portfolio-emsghin2iq-as.a.run.app/agents) · [`llms.txt`](https://portfolio-emsghin2iq-as.a.run.app/llms.txt)
-
-Some of what is on it:
-
-<table>
-  <tr>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/ai"><img alt="A request walking through the AI agent platform" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/ai-platform-map.webp" /></a></td>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/iot#platform-signals"><img alt="SLOs and error budgets after a simulated incident" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/slo-board.webp" /></a></td>
-  </tr>
-  <tr>
-    <td><sub><b>Follow a request</b> through the AI agent platform, and see which parts are mine.</sub></td>
-    <td><sub><b>SLOs and error budgets</b>, with multi-window burn-rate alerts and a replayable incident.</sub></td>
-  </tr>
-  <tr>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/break"><img alt="Break it yourself: a retry run against 30% errors, every attempt on a timeline" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/break.webp" /></a></td>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/cost"><img alt="What it costs: the month's receipt and where the money goes" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/cost.webp" /></a></td>
-  </tr>
-  <tr>
-    <td><sub><b>Break it yourself</b>: delays and 503s on your own requests to the live server, and four clients coping, attempt by attempt.</sub></td>
-    <td><sub><b>What it costs</b>: this month's bill from the server's own meters, and what a busy day would do to it.</sub></td>
-  </tr>
-  <tr>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/oncall"><img alt="The on-call drill: paged, investigating, the error budget burning" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/oncall-drill.webp" /></a></td>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/status"><img alt="DORA metrics for the portfolio, from its own deploy history" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/delivery.webp" /></a></td>
-  </tr>
-  <tr>
-    <td><sub><b>Go on call</b>: a simulated page on the IoT or the AI platform, where every look costs minutes, and a postmortem of your own response. Prefer text? Open <a href="https://portfolio-emsghin2iq-as.a.run.app/?terminal">the site's terminal</a> and type <code>oncall</code>.</sub></td>
-    <td><sub><b>How the site ships</b>: deploys, lead time, change failure rate and time to restore, measured by its pipeline.</sub></td>
-  </tr>
-  <tr>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/agents"><img alt="A console on the site calling its own MCP server" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/agents.webp" /></a></td>
-    <td width="50%"><a href="https://portfolio-emsghin2iq-as.a.run.app/evidence"><img alt="The site's claims, sorted by how they can be checked" src="https://raw.githubusercontent.com/zhenxi0901/portfolio/main/docs/screenshots/evidence.webp" /></a></td>
-  </tr>
-  <tr>
-    <td><sub><b>Ask it with your own agent</b>: the site is an MCP server, with a console that calls its tools.</sub></td>
-    <td><sub><b>Evidence</b>: every headline claim, sorted by whether you can check it live, publicly, or not at all.</sub></td>
-  </tr>
-</table>
 
 ## Postmortems
 
@@ -165,14 +127,16 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 - [What 320 agent runs taught me about serving LLM agents](https://portfolio-emsghin2iq-as.a.run.app/writing/serving-llm-agents): MCP tool calls were 2.7% of agent time, 96% of input tokens came from the prefix cache, and the GPU sat idle most of the time it was held.
 - [Finding a metrics bill in 914 orphaned Kafka topics](https://portfolio-emsghin2iq-as.a.run.app/writing/metrics-bill-kafka-topics): attribution first, a reaper that has to be a CronJob because the topics grow back, and dropping metrics only after checking who reads them.
 
-## In review right now
+## Open source
+
+### In review
 
 <!-- open-prs:start -->
 - **[hyscale-lab/ARIES#104](https://github.com/hyscale-lab/ARIES/pull/104)** feat: add aries cleanup for what a crashed run left <sub>opened 2026-11-11</sub>
 - **[hyscale-lab/ARIES#96](https://github.com/hyscale-lab/ARIES/pull/96)** feat: portable plugins (skills and MCP servers) for OpenClaw and Hermes <sub>opened 2026-11-02</sub>
 <!-- open-prs:end -->
 
-## Merged pull requests
+### Merged
 
 <!-- merged-prs:start -->
 - **[hyscale-lab/ARIES](https://github.com/hyscale-lab/ARIES)**: 4 merged
@@ -189,7 +153,7 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 
 ## My portfolio's latest deploys
 
-Every push to `main` runs lint, tests, a container smoke test, Lighthouse budgets and a CVE gate on one image, which CI then signs with an SBOM and build provenance. The deploy verifies those, holds the release if the error budget is spent, smoke-tests the new revision before it takes traffic and rolls back on its own if the live checks fail. Each release is a [GitHub release](https://github.com/zhenxi0901/portfolio/releases); the full history is in the [changelog](https://portfolio-emsghin2iq-as.a.run.app/changelog). Refreshed every four hours.
+Every push to `main` runs lint, tests, a container smoke test, Lighthouse budgets and a CVE gate on one image, which CI then signs with an SBOM and build provenance. The deploy verifies those, holds the release if the error budget is spent, smoke-tests the new revision before it takes traffic and rolls back on its own if the live checks fail. Each release is a [GitHub release](https://github.com/zhenxi0901/portfolio/releases); the full history is in the [changelog](https://portfolio-emsghin2iq-as.a.run.app/changelog). Refreshed a few times a day.
 
 <details>
 <summary>The last five deploys</summary>
@@ -210,11 +174,21 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 
 - **Cloud and infrastructure:** Google Cloud (GKE, Cloud Run, Cloud Build, Vertex AI), AWS, Kubernetes, Docker, Terraform, Linux
 - **Delivery and reliability:** GitHub Actions, Git, Prometheus, Grafana, OpenTelemetry
-- **Languages:** Go, Python, Java, Bash, TypeScript
+- **Languages:** Go, Python, Java, Kotlin, Bash, TypeScript
 - **Data and messaging:** Kafka, Redis, PostgreSQL
 - **AI infrastructure:** SGLang, PyTorch, NVIDIA A100, Milvus, Langfuse
 
-<sub>This README keeps itself current: a GitHub Action pulls my open and merged pull requests and my portfolio's deploys every four hours, and the card above is drawn live by my portfolio's own server.</sub>
+<sub>This README keeps itself current: GitHub Actions refresh the typing line, my pull requests and my portfolio's deploys a few times a day and redraw the animations below, and the map and the card up top are drawn live by my portfolio's own server.</sub>
+
+## For fun
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/canary-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/canary-light.svg" />
+  <img width="100%" alt="My last year of GitHub contributions, rolled out like a release: a canary takes the newest weeks first, then more, with my site's health as of the last redraw" src="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/canary-light.svg" />
+</picture>
+
+<sub>My real contribution graph, shipped the way I ship releases: a canary takes the newest weeks first, then more, while the health line shows my site's numbers as of the last redraw. Redrawn a few times a day by a GitHub Action.</sub>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/snake-dark.svg" />

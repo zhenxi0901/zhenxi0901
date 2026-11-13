@@ -21,20 +21,24 @@ LABEL = {"name": "ask", "color": "c2f75c", "description": "Answered by my portfo
 
 
 def call(method: str, url: str, body=None, headers=None, timeout=20):
-    """One HTTP request; returns (status, parsed JSON or None)."""
-    data = json.dumps(body).encode() if body is not None else None
+    """One HTTP request: (status, parsed JSON or None). Status 0 means no answer at all: refused,
+    reset or timed out. Never raises, so every failure still gets a reply on the issue."""
+    # Plain UTF-8: escaped as \uXXXX pairs, a 300-character question of emoji would be too big for the API.
+    data = json.dumps(body, ensure_ascii=False).encode("utf-8") if body is not None else None
     req = urllib.request.Request(url, data=data, method=method, headers={"User-Agent": AGENT, **(headers or {})})
     if data is not None:
         req.add_header("Content-Type", "application/json")
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
-            raw = resp.read()
-            return resp.status, (json.loads(raw) if raw else None)
+            status, raw = resp.status, resp.read()
     except urllib.error.HTTPError as e:
-        try:
-            return e.code, json.loads(e.read() or b"null")
-        except ValueError:
-            return e.code, None
+        status, raw = e.code, e.read()
+    except (OSError, ValueError):  # URLError and TimeoutError are OSErrors
+        return 0, None
+    try:
+        return status, (json.loads(raw) if raw else None)
+    except ValueError:  # an answer that isn't JSON: a proxy's error page, say
+        return status, None
 
 
 def github(method: str, path: str, body=None):
@@ -49,9 +53,21 @@ def github(method: str, path: str, body=None):
     return data
 
 
-def question_from(title: str) -> str:
-    """The question after the "ask:" prefix, on one line."""
-    return re.sub(r"\s+", " ", re.sub(r"^\s*ask\s*:\s*", "", title, flags=re.I)).strip()
+ASK = re.compile(r"^\s*ask\s*[:：]\s*(.*)$", re.I | re.S)  # "ask:", "Ask :", "ASK：" (full-width)
+
+
+def question_from(title: str) -> str | None:
+    """The question after the "ask:" prefix, on one line; None if the title isn't an ask."""
+    m = ASK.match(title)
+    return re.sub(r"\s+", " ", m.group(1)).strip() if m else None
+
+
+def note_from(body: str) -> str:
+    """What the asker wrote besides the question: the form's optional note, or a blank issue's body."""
+    body = (body or "").strip()
+    m = re.search(r"###\s*Anything else\?[^\n]*\n+(.*)", body, re.S)
+    note = (m.group(1) if m else body).strip()
+    return "" if note in ("", "_No response_") else note
 
 
 def links() -> dict:
@@ -72,6 +88,22 @@ def reply(question: str) -> tuple[str, str | None]:
     if not 3 <= len(question) <= 300:
         return "Put a question of 3 to 300 characters after `ask:` in the title, and open a new issue." + footer, "not_planned"
     status, data = call("POST", f"{SITE}/api/ask", {"question": question})
+    if status in (400, 413):  # the site's own words on what was wrong with it
+        why = (data or {}).get("error") or "It couldn't take that question."
+        return f"My site couldn't take that question: {why} Try a plainer one in a new issue." + footer, "not_planned"
+    if status == 429:
+        return "My site is answering a lot of questions right now. Ask again in a minute, in a new issue." + footer, "not_planned"
+    if status == 200 and data and data.get("answer") and data.get("mode") != "retrieval":
+        # Only retrieval answers are repeated here: sentences from the site's own pages, which a
+        # question can't steer. A model's answer could be, so that one waits for me.
+        return "My site answered with a language model this time, so I'll answer this one myself." + footer, None
+    if status == 200 and data and data.get("answer") and not data.get("sources"):
+        # The site's facts don't cover it (its reply is "I couldn't find that…"): no pretending.
+        return (
+            "My site's facts don't cover that one, so I'll answer it myself. Meanwhile, my "
+            f"[portfolio]({SITE}) has the whole story, and a [contact form]({SITE}/about) that reaches me directly." + footer,
+            None,
+        )
     if status != 200 or not data or not data.get("answer"):
         why = f"HTTP {status}" if status else "no answer"
         return (
@@ -89,7 +121,9 @@ def reply(question: str) -> tuple[str, str | None]:
         f"> Answered by my portfolio's own [Ask API]({SITE}/about#ask): retrieval over the site's facts "
         "(BM25, no LLM), so every sentence below comes from a page you can open."
     )
-    body = f"{head}\n\n{data['answer']}"
+    # No mentions, even by accident: "@name" gets a zero-width space, so nobody is pinged.
+    answer = re.sub(r"(^|\s)@(\w)", "\\1@\u200b\\2", data["answer"])
+    body = f"{head}\n\n{answer}"
     if sources:
         body += "\n\n**From:** " + " · ".join(sources)
     return body + footer, "completed"
@@ -97,7 +131,15 @@ def reply(question: str) -> tuple[str, str | None]:
 
 def main() -> int:
     number = os.environ["NUMBER"]
-    text, close = reply(question_from(os.environ.get("TITLE", "")))
+    question = question_from(os.environ.get("TITLE", ""))
+    if question is None:  # the workflow's filter is looser ("ask…"); anything else is left alone
+        print("not an ask issue: left alone")
+        return 0
+    text, close = reply(question)
+    if close == "completed" and note_from(os.environ.get("BODY", "")):
+        # The form promises a person reads the note, so the issue stays open for one.
+        text += "\n\nYou added a note as well, so I'll read it and reply to that part myself."
+        close = None
     github("POST", f"/issues/{number}/comments", {"body": text})
     if close == "completed":
         github("POST", "/labels", LABEL)

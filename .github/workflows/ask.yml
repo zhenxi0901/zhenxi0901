@@ -16,11 +16,13 @@ concurrency:
 
 jobs:
   answer:
-    if: startsWith(github.event.issue.title, 'ask:') || startsWith(github.event.issue.title, 'Ask:') || startsWith(github.event.issue.title, 'ASK:')
+    # startsWith ignores case. The script decides what is an ask ("ask:", "ask :", "ask：") and
+    # leaves any other title starting with "ask" alone.
+    if: startsWith(github.event.issue.title, 'ask')
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - run: python3 scripts/ask_issue.py
@@ -29,3 +31,4 @@ jobs:
           REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           TITLE: ${{ github.event.issue.title }}
+          BODY: ${{ github.event.issue.body }}

@@ -40,6 +40,12 @@ def cell(text: str) -> str:
     return text.replace("|", "\\|").replace("\n", " ")
 
 
+def plain(text: str) -> str:
+    """Words from someone else's repository (a pull request title, which its maintainers can edit),
+    shown as words: no HTML, links, images or emphasis can come through."""
+    return re.sub(r"([\\`*_\[\]])", r"\\\1", html.escape(text, quote=False))
+
+
 def merged_prs(per_repo: int = 3) -> str:
     """My merged pull requests to other people's public repositories, grouped by repository.
 
@@ -51,7 +57,7 @@ def merged_prs(per_repo: int = 3) -> str:
     for it in items:
         repo = it["repository_url"].split("/repos/", 1)[1]
         merged = (it.get("pull_request") or {}).get("merged_at") or it["closed_at"]
-        line = f"  - [#{it['number']}]({it['html_url']}) {it['title']} <sub>merged {merged[:10]}</sub>"
+        line = f"  - [#{it['number']}]({it['html_url']}) {plain(it['title'])} <sub>merged {merged[:10]}</sub>"
         by_repo.setdefault(repo, []).append((merged, line))
     for prs in by_repo.values():
         prs.sort(reverse=True)
@@ -79,7 +85,7 @@ def open_prs(limit: int = 6) -> str:
     for it in items:
         repo = it["repository_url"].split("/repos/", 1)[1]
         draft = " (draft)" if it.get("draft") else ""
-        lines.append(f"- **[{repo}#{it['number']}]({it['html_url']})** {it['title']}{draft} <sub>opened {it['created_at'][:10]}</sub>")
+        lines.append(f"- **[{repo}#{it['number']}]({it['html_url']})** {plain(it['title'])}{draft} <sub>opened {it['created_at'][:10]}</sub>")
     return "\n".join(lines) or "_Nothing open right now._"
 
 
@@ -91,7 +97,7 @@ def deploys(limit: int = 5) -> str:
     lines = ["| Commit | Result | Started (UTC) | Took |", "|---|---|---|---|"]
     for r in done:
         took = int((parse(r["updated_at"]) - parse(r["run_started_at"])).total_seconds())
-        msg = cell(r["head_commit"]["message"].splitlines()[0])[:80]
+        msg = cell(plain(r["head_commit"]["message"].splitlines()[0]))[:80]
         sha = r["head_sha"]
         result = "passed" if r["conclusion"] == "success" else "failed"
         started = r["run_started_at"][:16].replace("T", " ")
@@ -107,29 +113,31 @@ def site(path: str):
 
 
 def typing_lines() -> list[str]:
-    """What the typing line cycles through: the fixed sentences, then the commit live on my site and
-    its uptime, the deploys of the last 30 days, my latest merged pull request, and the ask bot.
-    No relative times ("2 h ago"): the line is only rewritten every few hours."""
-    lines = list(TYPING_FIXED)
-    status, slo = site("/api/status"), site("/api/slo")
-    live = f"Live on my portfolio now: commit {status['commit'][:7]}"
+    """What the typing line cycles through: the fixed sentences with the live ones between them, so a
+    live one shows early. No commit and no relative time: the line is only redrawn a few times a day,
+    and the live-commit badge right below it says which commit is running."""
+    slo, delivery = site("/api/slo"), site("/delivery.json")
+    live = []
     if slo.get("available"):
-        live += f", {math.floor(slo['availability'] * 1e5) / 1e3:.3f}% up"
-    lines.append(live)
-    delivery = site("/delivery.json")
-    if delivery.get("deploys"):
-        lead = (delivery.get("leadTimeMinutes") or {}).get("median")
-        lines.append(f"{delivery['deploys']} deploys in {delivery['windowDays']} days" + (f", median lead time {lead:.0f} min" if lead else ""))
+        av = slo["availability"]
+        # The site's own rule: two decimals rounded down, and a plain 100% when nothing failed.
+        up = "100%" if av >= 1 else f"{math.floor(av * 1e4 + 1e-6) / 100:.2f}%"
+        days = slo.get("window_days", 30)
+        since = dt.datetime.fromisoformat(slo["since"].replace("Z", "+00:00")) if slo.get("since") else None
+        if since and (dt.datetime.now(dt.timezone.utc) - since).days < days:
+            window = f"since {since.day} {since:%b}"
+        else:
+            window = f"over {days} days"
+        line = f"Portfolio: {up} up {window}"
+        if delivery.get("deploys"):
+            line += f", {delivery['deploys']} deploys in {delivery['windowDays']} days"
+        live.append(line)
     query = f"author:{USER} is:pr is:merged is:public -user:{USER}"
     items = api(f"/search/issues?q={urllib.parse.quote(query)}&sort=updated&order=desc&per_page=20")["items"]
     if items:
         it = max(items, key=lambda i: (i.get("pull_request") or {}).get("merged_at") or i["closed_at"])
-        repo = it["repository_url"].rsplit("/", 1)[1]
-        title = it["title"]
-        if len(title) > 30:
-            title = title[:30].rsplit(" ", 1)[0].rstrip(",.:;-") + "…"
-        lines.append(f"Latest merged PR: {repo}#{it['number']} {title}")
-    lines.append('Open an issue titled "ask: ..." and my site replies')
+        live.append(f"Just merged: {it['repository_url'].split('/repos/', 1)[1]}#{it['number']}")
+    lines = [TYPING_FIXED[0], *live[:1], TYPING_FIXED[1], *live[1:], "Open an issue titled ask: … and my site replies"]
     # A semicolon would end a line early in the service's URL.
     return [line.replace(";", ",") for line in lines]
 
@@ -138,7 +146,7 @@ def set_typing(text: str, lines: list[str]) -> str:
     """Write the sentences into every readme-typing-svg URL, and the image's alt text."""
     encoded = ";".join(urllib.parse.quote_plus(line) for line in lines)
     if not TYPING_URL.search(text):
-        raise SystemExit("typing line not found")
+        raise ValueError("typing line not found")
     text = TYPING_URL.sub(lambda m: m.group(1) + encoded, text)
     alt = html.escape(" ".join(line if line.endswith(("…", ".")) else line + "." for line in lines), quote=True)
     return TYPING_ALT.sub(lambda m: m.group(1) + alt + m.group(3), text)
@@ -147,7 +155,7 @@ def set_typing(text: str, lines: list[str]) -> str:
 def replace(text: str, name: str, body: str) -> str:
     pattern = re.compile(rf"(<!-- {name}:start -->\n).*?(\n<!-- {name}:end -->)", re.S)
     if not pattern.search(text):
-        raise SystemExit(f"markers for {name} not found")
+        raise ValueError(f"markers for {name} not found")
     return pattern.sub(lambda m: m.group(1) + body + m.group(2), text)
 
 
