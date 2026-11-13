@@ -18,11 +18,11 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 **Open to 2027 roles in SRE, cloud and AI infrastructure.**
 
 <a href="https://portfolio-emsghin2iq-as.a.run.app"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-c2f75c?style=for-the-badge&logo=googlecloud&logoColor=0d1117" /></a>
-<a href="https://www.linkedin.com/in/zhenxi-li-lzx391/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2MyZjc1YyIgZD0iTTIwLjQ1IDIwLjQ1aC0zLjU2di01LjU3YzAtMS4zMy0uMDItMy4wNC0xLjg1LTMuMDQtMS44NSAwLTIuMTQgMS40NS0yLjE0IDIuOTR2NS42N0g5LjM0VjloMy40MnYxLjU2aC4wNWMuNDgtLjkgMS42NC0xLjg1IDMuMzctMS44NSAzLjYgMCA0LjI3IDIuMzcgNC4yNyA1LjQ2djYuMjh6TTUuMzQgNy40M2EyLjA2IDIuMDYgMCAxIDEgMC00LjEzIDIuMDYgMi4wNiAwIDAgMSAwIDQuMTN6TTcuMTIgMjAuNDVIMy41NlY5aDMuNTZ2MTEuNDV6TTIyLjIyIDBIMS43N0MuNzkgMCAwIC43NyAwIDEuNzN2MjAuNTRDMCAyMy4yMy43OSAyNCAxLjc3IDI0aDIwLjQ1Yy45OCAwIDEuNzgtLjc3IDEuNzgtMS43M1YxLjczQzI0IC43NyAyMy4yIDAgMjIuMjIgMHoiLz48L3N2Zz4%3D" /></a>
-<a href="mailto:zli057@e.ntu.edu.sg"><img alt="Email" src="https://img.shields.io/badge/Email-0d1117?style=for-the-badge&logo=gmail&logoColor=c2f75c" /></a>
+<a href="https://www.linkedin.com/in/zhenxi-li-lzx391/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-1f2937?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2MyZjc1YyIgZD0iTTIwLjQ1IDIwLjQ1aC0zLjU2di01LjU3YzAtMS4zMy0uMDItMy4wNC0xLjg1LTMuMDQtMS44NSAwLTIuMTQgMS40NS0yLjE0IDIuOTR2NS42N0g5LjM0VjloMy40MnYxLjU2aC4wNWMuNDgtLjkgMS42NC0xLjg1IDMuMzctMS44NSAzLjYgMCA0LjI3IDIuMzcgNC4yNyA1LjQ2djYuMjh6TTUuMzQgNy40M2EyLjA2IDIuMDYgMCAxIDEgMC00LjEzIDIuMDYgMi4wNiAwIDAgMSAwIDQuMTN6TTcuMTIgMjAuNDVIMy41NlY5aDMuNTZ2MTEuNDV6TTIyLjIyIDBIMS43N0MuNzkgMCAwIC43NyAwIDEuNzN2MjAuNTRDMCAyMy4yMy43OSAyNCAxLjc3IDI0aDIwLjQ1Yy45OCAwIDEuNzgtLjc3IDEuNzgtMS43M1YxLjczQzI0IC43NyAyMy4yIDAgMjIuMjIgMHoiLz48L3N2Zz4%3D" /></a>
+<a href="mailto:zli057@e.ntu.edu.sg"><img alt="Email" src="https://img.shields.io/badge/Email-1f2937?style=for-the-badge&logo=gmail&logoColor=c2f75c" /></a>
 
-<a href="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml"><img alt="Commit live on my portfolio right now" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fportfolio-emsghin2iq-as.a.run.app%2Fapi%2Fstatus&query=%24.commit&label=live%20commit&style=flat-square&labelColor=0d1117&color=c2f75c&logo=googlecloud&logoColor=c2f75c" /></a>
-<a href="https://portfolio-emsghin2iq-as.a.run.app/status"><img alt="Portfolio uptime over 30 days, from Google Cloud uptime checks" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fportfolio-emsghin2iq-as.a.run.app%2Fapi%2Fbadge%2Fuptime&style=flat-square&labelColor=0d1117&logo=googlecloud&logoColor=c2f75c" /></a>
+<a href="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml"><img alt="Commit live on my portfolio right now" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fportfolio-emsghin2iq-as.a.run.app%2Fapi%2Fstatus&query=%24.commit&label=live%20commit&style=flat-square&labelColor=1f2937&color=c2f75c&logo=googlecloud&logoColor=c2f75c" /></a>
+<a href="https://portfolio-emsghin2iq-as.a.run.app/status"><img alt="Portfolio uptime over 30 days, from Google Cloud uptime checks" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fportfolio-emsghin2iq-as.a.run.app%2Fapi%2Fbadge%2Fuptime&style=flat-square&labelColor=1f2937&logo=googlecloud&logoColor=c2f75c" /></a>
 <a href="https://github.com/zhenxi0901/portfolio/actions/workflows/ci.yml"><img alt="Portfolio CI" src="https://github.com/zhenxi0901/portfolio/actions/workflows/ci.yml/badge.svg" /></a>
 <a href="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml"><img alt="Portfolio deploy" src="https://github.com/zhenxi0901/portfolio/actions/workflows/deploy.yml/badge.svg" /></a>
 
@@ -36,6 +36,15 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 | **AI agent platform**<br><sub>Primustech</sub> | Two agents for facility teams: one answers from live building data, the other from company documents (RAG). Cloud Run and Vertex AI. | **3 environments, deployed the same way.** I deploy and run the agent and RAG services in dev, staging and production: per-environment CI/CD, IAM, secrets and shared-VPC networking. Latency, token-cost and model benchmarks.<br><sub>[Case study](https://portfolio-emsghin2iq-as.a.run.app/work/ai-platform) · [the platform up close](https://portfolio-emsghin2iq-as.a.run.app/ai)</sub> |
 | **ARIES agent benchmarks**<br><sub>NTU HyScale Lab, final-year project</sub> | Long-horizon LLM agent workloads on the lab's open-source agent-serving framework. | **320 agent runs benchmarked; 6,678 lines merged upstream.** The Toolathlon adapter for ARIES, and an Apptainer backend so the whole stack runs on a supercomputer without Docker or root (merged Nov 2026). The runs used a hosted API and self-hosted SGLang on an A100, then 48 more were instrumented to see what each MCP tool server costs per call.<br><sub>[Findings](https://portfolio-emsghin2iq-as.a.run.app/research) · [running it without root](https://portfolio-emsghin2iq-as.a.run.app/writing/agents-without-root) · [ARIES](https://github.com/hyscale-lab/ARIES)</sub> |
 | **Robot car**<br><sub>NTU Multidisciplinary Design Project, Aug to Oct 2026</sub> | An autonomous car: an STM32 drives it, a Raspberry Pi links it to the tablet, and a laptop plans the route and recognises targets in the Pi's camera feed. | **21 merged PRs.** The Android tablet controller, in Kotlin. Made the tablet and the Pi agree on the map, and removed a planning state the app could never leave.<br><sub>[Repository](https://github.com/whupdido/mdp)</sub> |
+
+## Numbers I can back up
+
+- **~15%** lower cloud spend, as estimated in my cost review (the work itself is private): 914 orphaned Kafka topics reaped, monitoring samples cut 40%, Cloud SQL and pods right-sized.
+- **320** LLM agent runs benchmarked: MCP tool calls are 2.7% of agent time, and 96% of input tokens come from the prefix cache.
+- **~7x** more A100 time held by serving jobs than the agents used.
+- **3.02x** throughput from four isolated agent tasks at once on one VM.
+- **10** principles for remote control of building equipment, each traced to the finding behind it, and **431** tests on the bridge that applies them.
+- **6,678** lines across 46 files: the Apptainer backend that runs ARIES on a supercomputer without root, merged upstream.
 
 ## See it running
 
@@ -170,15 +179,6 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 <!-- deploys:end -->
 
 </details>
-
-## Numbers I can back up
-
-- **~15%** lower cloud spend: 914 orphaned Kafka topics reaped, monitoring samples cut 40%, Cloud SQL and pods right-sized.
-- **320** LLM agent runs benchmarked: MCP tool calls are 2.7% of agent time, and 96% of input tokens come from the prefix cache.
-- **~7x** more A100 time held by serving jobs than the agents used.
-- **3.02x** throughput from four isolated agent tasks at once on one VM.
-- **10** principles for remote control of building equipment, each traced to the finding behind it, and **431** tests on the bridge that applies them.
-- **6,678** lines across 46 files: the Apptainer backend that runs ARIES on a supercomputer without root, merged upstream.
 
 ## Stack
 
