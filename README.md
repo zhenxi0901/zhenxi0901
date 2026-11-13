@@ -58,7 +58,7 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 
 ## See it running
 
-My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production service in its own right: a Go API on Cloud Run with its own 99.9% SLO, measured from outside by uptime checks and shown live on its status page; DORA metrics computed from its own deploy history; OpenTelemetry traces in Cloud Trace, with each [Ask](https://portfolio-emsghin2iq-as.a.run.app/about#ask) answer showing its own; and a pipeline that builds the image once, tests and signs it, checks it before it takes traffic and rolls it back on its own if the live checks fail. The card below is drawn live by the portfolio's own Go server:
+My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production service in its own right: a Go API on Cloud Run with its own 99.9% SLO, measured from outside by uptime checks and shown live on its status page; DORA metrics computed from its own deploy history; OpenTelemetry traces in Cloud Trace, with each [Ask](https://portfolio-emsghin2iq-as.a.run.app/about#ask) answer showing its own; and a pipeline that builds the image once, tests and signs it, checks it before it takes traffic and rolls it back on its own if the live checks fail. The map and the card below are drawn live by the portfolio's own Go server, with its own numbers:
 
 <a href="https://portfolio-emsghin2iq-as.a.run.app/status">
 <picture>
