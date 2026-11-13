@@ -1,0 +1,31 @@
+name: ask
+
+# Answers an issue titled "ask: <question>" from my portfolio's own Ask API (retrieval over the site's
+# facts, no LLM) and closes it; any other issue is left alone. The title reaches the script through an
+# environment variable, never inside the shell command, so it can't run as code.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ask-${{ github.event.issue.number }}
+
+jobs:
+  answer:
+    if: startsWith(github.event.issue.title, 'ask:') || startsWith(github.event.issue.title, 'Ask:') || startsWith(github.event.issue.title, 'ASK:')
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - run: python3 scripts/ask_issue.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}

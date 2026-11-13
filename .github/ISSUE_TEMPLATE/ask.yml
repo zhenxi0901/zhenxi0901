@@ -1,0 +1,18 @@
+name: Ask my portfolio
+description: Put a question in the title after "ask:". My site answers from its own facts within a minute, then closes the issue.
+title: "ask: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Write your question in the title, after `ask:`. For example: `ask: How did you cut the cloud bill?` or `ask: What did your FYP find?`
+
+        A bot sends it to my portfolio's [Ask API](https://portfolio-emsghin2iq-as.a.run.app/about#ask): retrieval over the site's own facts (BM25, no LLM), the same one behind its MCP server. It replies here with the answer and the pages it came from, then closes the issue.
+  - type: textarea
+    id: note
+    attributes:
+      label: Anything else? (optional)
+      description: The bot only reads the title; I read this.
+    validations:
+      required: false

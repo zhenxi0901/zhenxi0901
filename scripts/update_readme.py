@@ -6,7 +6,9 @@ section keeps its previous content, so a bad API day never blanks the profile.
 """
 
 import datetime as dt
+import html
 import json
+import math
 import os
 import re
 import sys
@@ -17,6 +19,11 @@ USER = "zhenxi0901"
 PORTFOLIO = f"{USER}/portfolio"
 FIRST = ["hyscale-lab/ARIES"]  # repositories listed first in the merged pull requests
 README = os.path.join(os.path.dirname(__file__), "..", "README.md")
+SITE = "https://portfolio-emsghin2iq-as.a.run.app"
+# The typing line's first sentences, which don't change; the live ones follow.
+TYPING_FIXED = ["I run Kubernetes in production on Google Cloud", "I benchmark LLM agents on A100 GPUs"]
+TYPING_URL = re.compile(r"(https://readme-typing-svg\.demolab\.com\?[^\"]*?lines=)([^\"&]*)")
+TYPING_ALT = re.compile(r'(<img alt=")([^"]*)(" src="https://readme-typing-svg\.demolab\.com)')
 
 
 def api(path: str):
@@ -92,6 +99,51 @@ def deploys(limit: int = 5) -> str:
     return "\n".join(lines) if done else "_No deploys yet._"
 
 
+def site(path: str):
+    """JSON from my portfolio."""
+    req = urllib.request.Request(SITE + path, headers={"User-Agent": f"{USER}-readme"})
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return json.load(resp)
+
+
+def typing_lines() -> list[str]:
+    """What the typing line cycles through: the fixed sentences, then the commit live on my site and
+    its uptime, the deploys of the last 30 days, my latest merged pull request, and the ask bot.
+    No relative times ("2 h ago"): the line is only rewritten every few hours."""
+    lines = list(TYPING_FIXED)
+    status, slo = site("/api/status"), site("/api/slo")
+    live = f"Live on my portfolio now: commit {status['commit'][:7]}"
+    if slo.get("available"):
+        live += f", {math.floor(slo['availability'] * 1e5) / 1e3:.3f}% up"
+    lines.append(live)
+    delivery = site("/delivery.json")
+    if delivery.get("deploys"):
+        lead = (delivery.get("leadTimeMinutes") or {}).get("median")
+        lines.append(f"{delivery['deploys']} deploys in {delivery['windowDays']} days" + (f", median lead time {lead:.0f} min" if lead else ""))
+    query = f"author:{USER} is:pr is:merged is:public -user:{USER}"
+    items = api(f"/search/issues?q={urllib.parse.quote(query)}&sort=updated&order=desc&per_page=20")["items"]
+    if items:
+        it = max(items, key=lambda i: (i.get("pull_request") or {}).get("merged_at") or i["closed_at"])
+        repo = it["repository_url"].rsplit("/", 1)[1]
+        title = it["title"]
+        if len(title) > 30:
+            title = title[:30].rsplit(" ", 1)[0].rstrip(",.:;-") + "…"
+        lines.append(f"Latest merged PR: {repo}#{it['number']} {title}")
+    lines.append('Open an issue titled "ask: ..." and my site replies')
+    # A semicolon would end a line early in the service's URL.
+    return [line.replace(";", ",") for line in lines]
+
+
+def set_typing(text: str, lines: list[str]) -> str:
+    """Write the sentences into every readme-typing-svg URL, and the image's alt text."""
+    encoded = ";".join(urllib.parse.quote_plus(line) for line in lines)
+    if not TYPING_URL.search(text):
+        raise SystemExit("typing line not found")
+    text = TYPING_URL.sub(lambda m: m.group(1) + encoded, text)
+    alt = html.escape(" ".join(line if line.endswith(("…", ".")) else line + "." for line in lines), quote=True)
+    return TYPING_ALT.sub(lambda m: m.group(1) + alt + m.group(3), text)
+
+
 def replace(text: str, name: str, body: str) -> str:
     pattern = re.compile(rf"(<!-- {name}:start -->\n).*?(\n<!-- {name}:end -->)", re.S)
     if not pattern.search(text):
@@ -108,6 +160,10 @@ def main() -> int:
             updated = replace(updated, name, build())
         except Exception as e:  # keep the old section; say why in the job log
             print(f"warning: {name} not updated: {e}", file=sys.stderr)
+    try:
+        updated = set_typing(updated, typing_lines())
+    except Exception as e:  # keep the old line
+        print(f"warning: typing line not updated: {e}", file=sys.stderr)
     if updated != text:
         with open(README, "w", encoding="utf-8", newline="\n") as f:
             f.write(updated)

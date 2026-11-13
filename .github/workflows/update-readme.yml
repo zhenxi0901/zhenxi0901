@@ -27,5 +27,5 @@ jobs:
           git diff --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "README: refresh merged pull requests and deploys"
+          git commit -am "README: refresh live numbers, pull requests and deploys"
           git push
