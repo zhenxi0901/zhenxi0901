@@ -46,9 +46,27 @@ Computer Science at NTU, graduating June 2027 · DevOps intern · ICCV 2025 co-a
 - **10** principles for remote control of building equipment, each traced to the finding behind it, and **431** tests on the bridge that applies them.
 - **6,678** lines across 46 files: the Apptainer backend that runs ARIES on a supercomputer without root, merged upstream.
 
+## My last year, rolled out
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/canary-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/canary-light.svg" />
+  <img width="100%" alt="My last year of GitHub contributions, rolled out like a release: a canary takes 1% of the weeks, then 5, 25, 50 and 100%, with my site's live health beside it" src="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/canary-light.svg" />
+</picture>
+
+<sub>My real contribution graph, shipped the way I ship releases: a canary takes a few weeks first, then more, while the health line reads my site's live numbers. Redrawn every 6 hours by a GitHub Action from the GraphQL API.</sub>
+
 ## See it running
 
 My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production service in its own right: a Go API on Cloud Run with its own 99.9% SLO, measured from outside by uptime checks and shown live on its status page; DORA metrics computed from its own deploy history; OpenTelemetry traces in Cloud Trace, with each [Ask](https://portfolio-emsghin2iq-as.a.run.app/about#ask) answer showing its own; and a pipeline that builds the image once, tests and signs it, checks it before it takes traffic and rolls it back on its own if the live checks fail. The card below is drawn live by the portfolio's own Go server:
+
+<a href="https://portfolio-emsghin2iq-as.a.run.app/status">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://portfolio-emsghin2iq-as.a.run.app/api/map.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://portfolio-emsghin2iq-as.a.run.app/api/map.svg?theme=light" />
+  <img width="100%" alt="My portfolio's request path, live: a visitor, Google's front end, the Go server on Cloud Run, the page and the API, with the uptime checks and deploys that watch and feed it, drawn by the server itself with its own numbers" src="https://portfolio-emsghin2iq-as.a.run.app/api/map.svg?theme=light" />
+</picture>
+</a>
 
 <a href="https://portfolio-emsghin2iq-as.a.run.app/status">
   <picture>
@@ -83,6 +101,14 @@ Then ask your agent what I worked on, or whether the site is inside its error bu
 ```sh
 curl https://portfolio-emsghin2iq-as.a.run.app
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/terminal-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/terminal-light.svg" />
+  <img alt="A terminal running curl against my portfolio and printing the text card it answers with: the live commit, uptime and SLO" src="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/terminal-light.svg" />
+</picture>
+
+Or ask right here on GitHub: [open an issue titled `ask: …`](https://github.com/zhenxi0901/zhenxi0901/issues/new?template=ask.yml) and my site answers it within a minute, from its own facts, then closes it.
 
 [How to connect, and a console that sends real requests](https://portfolio-emsghin2iq-as.a.run.app/agents) · [`llms.txt`](https://portfolio-emsghin2iq-as.a.run.app/llms.txt)
 
@@ -189,3 +215,9 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 - **AI infrastructure:** SGLang, PyTorch, NVIDIA A100, Milvus, Langfuse
 
 <sub>This README keeps itself current: a GitHub Action pulls my open and merged pull requests and my portfolio's deploys every four hours, and the card above is drawn live by my portfolio's own server.</sub>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/snake-light.svg" />
+  <img width="100%" alt="A snake eating my GitHub contribution graph" src="https://raw.githubusercontent.com/zhenxi0901/zhenxi0901/animations/snake-light.svg" />
+</picture>
