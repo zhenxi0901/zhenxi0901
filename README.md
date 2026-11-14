@@ -162,11 +162,11 @@ Every push to `main` runs lint, tests, a container smoke test, Lighthouse budget
 <!-- deploys:start -->
 | Commit | Result | Started (UTC) | Took |
 |---|---|---|---|
+| [`260cec0`](https://github.com/zhenxi0901/portfolio/commit/260cec0a9f60ee1cf5d02c0aebeea574c2e1eee6) Phone fixes, a stoppable deploy replay, deep links that land and a safer Recentl | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43570636474) | 2026-11-14 07:20 | 1m 51s |
 | [`8a96ca9`](https://github.com/zhenxi0901/portfolio/commit/8a96ca92016916e1be39ea82f289a864b9570d54) README: today's end-to-end results, and the hero as it looks now | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43558728795) | 2026-11-14 04:51 | 1m 50s |
 | [`ae7b75e`](https://github.com/zhenxi0901/portfolio/commit/ae7b75ebf918c238bfe20499f5a65f5e8e42c42a) README current again; the hero's build time on a line of its own | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43557551375) | 2026-11-14 04:37 | 1m 44s |
 | [`ea4fdd6`](https://github.com/zhenxi0901/portfolio/commit/ea4fdd6213460f8eb03a248da928439fb1c6e919) Social preview: MCP in place of three.js | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43554461817) | 2026-11-14 04:00 | 1m 47s |
 | [`65b0d07`](https://github.com/zhenxi0901/portfolio/commit/65b0d07cb86d0be2872bdf2f9d044b3ba61ae3c8) Replay the latest deploy on /status | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43551153708) | 2026-11-14 03:20 | 1m 39s |
-| [`6ffe387`](https://github.com/zhenxi0901/portfolio/commit/6ffe38728c0148f22fc69da2f137b16339fb0438) A Recently list on the home page, current between deploys | [passed](https://github.com/zhenxi0901/portfolio/actions/runs/43550139639) | 2026-11-14 03:09 | 1m 46s |
 <!-- deploys:end -->
 
 </details>
