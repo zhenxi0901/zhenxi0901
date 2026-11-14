@@ -17,6 +17,11 @@ import urllib.request
 
 USER = "zhenxi0901"
 PORTFOLIO = f"{USER}/portfolio"
+# The only repositories whose pull requests are listed: owner/name, or owner/* for all of an owner's,
+# in any case. The lists are published without anyone reading them, so a pull request anywhere else
+# never shows up by itself; add a repository only after a look. Keep this the same as the portfolio's
+# lists (REPOS in web/scripts/activity.mjs and activityConfig in api/internal/server/server.go).
+ALLOWED_REPOS = ["zhenxi0901/*", "hyscale-lab/ARIES", "whupdido/mdp", "maeganliew/LTU_VIE", "anAcc22/SC1015_Group_Project"]
 FIRST = ["hyscale-lab/ARIES"]  # repositories listed first in the merged pull requests
 README = os.path.join(os.path.dirname(__file__), "..", "README.md")
 SITE = "https://portfolio-emsghin2iq-as.a.run.app"
@@ -46,16 +51,35 @@ def plain(text: str) -> str:
     return re.sub(r"([\\`*_\[\]])", r"\\\1", html.escape(text, quote=False))
 
 
+def allowed(repo: str) -> bool:
+    """Whether pull requests in repo (owner/name) may be listed. GitHub's names ignore case."""
+    owner, _, name = repo.lower().partition("/")
+    if not owner or not name or "/" in name:
+        return False
+    return any(r.lower() in (f"{owner}/{name}", f"{owner}/*") for r in ALLOWED_REPOS)
+
+
+def repo_of(item: dict) -> str:
+    """The owner/name of a search result's repository ("" if its URL is not the usual shape)."""
+    return (item.get("repository_url") or "").partition("/repos/")[2]
+
+
+def my_prs(state: str, sort: str) -> list[dict]:
+    """My open or merged pull requests to other people's public repositories, newest first by sort,
+    from ALLOWED_REPOS only. Every list of pull requests in the README comes through here."""
+    query = f"author:{USER} is:pr is:{state} is:public -user:{USER}"
+    items = api(f"/search/issues?q={urllib.parse.quote(query)}&sort={sort}&order=desc&per_page=100")["items"]
+    return [it for it in items if allowed(repo_of(it))]
+
+
 def merged_prs(per_repo: int = 3) -> str:
     """My merged pull requests to other people's public repositories, grouped by repository.
 
     Repositories in FIRST lead, in that order; the rest follow by their most recent merge.
     """
-    query = f"author:{USER} is:pr is:merged is:public -user:{USER}"
-    items = api(f"/search/issues?q={urllib.parse.quote(query)}&sort=updated&order=desc&per_page=100")["items"]
     by_repo: dict[str, list[tuple[str, str]]] = {}
-    for it in items:
-        repo = it["repository_url"].split("/repos/", 1)[1]
+    for it in my_prs("merged", "updated"):
+        repo = repo_of(it)
         merged = (it.get("pull_request") or {}).get("merged_at") or it["closed_at"]
         line = f"  - [#{it['number']}]({it['html_url']}) {plain(it['title'])} <sub>merged {merged[:10]}</sub>"
         by_repo.setdefault(repo, []).append((merged, line))
@@ -79,11 +103,9 @@ def merged_prs(per_repo: int = 3) -> str:
 
 def open_prs(limit: int = 6) -> str:
     """My open pull requests to other people's public repositories, newest first."""
-    query = f"author:{USER} is:pr is:open is:public -user:{USER}"
-    items = api(f"/search/issues?q={urllib.parse.quote(query)}&sort=created&order=desc&per_page={limit}")["items"]
     lines = []
-    for it in items:
-        repo = it["repository_url"].split("/repos/", 1)[1]
+    for it in my_prs("open", "created")[:limit]:
+        repo = repo_of(it)
         draft = " (draft)" if it.get("draft") else ""
         lines.append(f"- **[{repo}#{it['number']}]({it['html_url']})** {plain(it['title'])}{draft} <sub>opened {it['created_at'][:10]}</sub>")
     return "\n".join(lines) or "_Nothing open right now._"
@@ -132,11 +154,10 @@ def typing_lines() -> list[str]:
         if delivery.get("deploys"):
             line += f", {delivery['deploys']} deploys in {delivery['windowDays']} days"
         live.append(line)
-    query = f"author:{USER} is:pr is:merged is:public -user:{USER}"
-    items = api(f"/search/issues?q={urllib.parse.quote(query)}&sort=updated&order=desc&per_page=20")["items"]
+    items = my_prs("merged", "updated")
     if items:
         it = max(items, key=lambda i: (i.get("pull_request") or {}).get("merged_at") or i["closed_at"])
-        live.append(f"Just merged: {it['repository_url'].split('/repos/', 1)[1]}#{it['number']}")
+        live.append(f"Just merged: {repo_of(it)}#{it['number']}")
     lines = [TYPING_FIXED[0], *live[:1], TYPING_FIXED[1], *live[1:], "Open an issue titled ask: … and my site replies"]
     # A semicolon would end a line early in the service's URL.
     return [line.replace(";", ",") for line in lines]
