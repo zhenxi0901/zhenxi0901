@@ -85,6 +85,7 @@ My [portfolio](https://portfolio-emsghin2iq-as.a.run.app) is a small production 
 - **[Break it yourself](https://portfolio-emsghin2iq-as.a.run.app/break)**: inject delays and 503s into your own requests to the live server, and watch retries, a circuit breaker and hedging cope, attempt by attempt.
 - **[What it costs](https://portfolio-emsghin2iq-as.a.run.app/cost)**: this month's bill, metered request by request, where the money goes, and what a traffic spike would do to it.
 - **[Size a GPU for agents](https://portfolio-emsghin2iq-as.a.run.app/research#capacity)**: KV cache, decode speed and cost per agent task, starting from my FYP's measurements.
+- **[Watch a real deploy](https://portfolio-emsghin2iq-as.a.run.app/status#replay)**: my site's latest release replayed step by step at its real timings: the provenance check, the error-budget gate, a new revision with no traffic, smoke tests, the traffic switch, and the rollback it didn't need.
 - **[dora-card](https://github.com/zhenxi0901/dora-card)**: the four DORA metrics from my pipeline, extracted into a GitHub Action any repository can use for a README card.
 
 ### Ask it with your own agent
