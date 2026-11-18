@@ -133,6 +133,7 @@ Blameless write-ups of what went wrong while I built and ran my portfolio: timel
 ### In review
 
 <!-- open-prs:start -->
+- **[hyscale-lab/ARIES#108](https://github.com/hyscale-lab/ARIES/pull/108)** feat(apptainer): run each task in a network namespace of its own <sub>opened 2026-11-18</sub>
 - **[hyscale-lab/ARIES#104](https://github.com/hyscale-lab/ARIES/pull/104)** feat: add aries cleanup for what a crashed run left <sub>opened 2026-11-11</sub>
 - **[hyscale-lab/ARIES#96](https://github.com/hyscale-lab/ARIES/pull/96)** feat: portable plugins (skills and MCP servers) for OpenClaw and Hermes <sub>opened 2026-11-02</sub>
 <!-- open-prs:end -->
